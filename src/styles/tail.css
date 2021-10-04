@@ -47,3 +47,11 @@
 .padding-bottom-20 {
   padding-bottom: 12rem;
 }
+.rarity-summary {
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+.rarity-tier {
+  font-size: 1.2rem;
+  line-height: 1.4rem!important;
+}

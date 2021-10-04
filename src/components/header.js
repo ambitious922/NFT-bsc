@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Modal, Button } from 'react-bootstrap';
+import WalletConnectModal from './modal/walletConnectModal';
 import '../styles/header.css';
 
-function Header() {
+
+
+function Header(props) {
   const [showNarrow, setShowNarrow] = useState(false);
-  const [openModal, setOpenModal] = useState(false);
   return (
     <div>
       <nav className="navbar py-2 px-3 navbar-toggleable-md navbar-inverse flex-row justify-content-between">
@@ -72,7 +73,7 @@ function Header() {
           
         </div>
         <div >
-          <button className="btn btn-primary my-2 my-sm-0 Tanker" onClick={() => setOpenModal(!openModal)}><i class="fas fa-wallet mr-2"></i>CONNECT WALLET</button>
+          <button className="btn btn-primary my-2 my-sm-0 Tanker" onClick={() => props.setOpenModal(!props.openModal)}><i class="fas fa-wallet mr-2"></i>CONNECT WALLET</button>
           <button className="ml-2 mt-3 navbar-toggler" onClick={() => setShowNarrow(!showNarrow)} type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -87,36 +88,7 @@ function Header() {
         <a href="#faq" className="py-1 Tanker" onClick={() => setShowNarrow(!showNarrow)}>FAQ</a>
       </div>
       }
-      <Modal show={openModal}>
-        <Modal.Header closeButton>
-          <Modal.Title><p className="Tanker wallet-connect-title">WALLET CONNECTION</p></Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <div className="text-center">
-            <Button variant="secondary">
-              <div className="metamask text-center">
-                <img className="metamask-img" src="./assets/images/w1.svg"/>
-                <p className="metamask-title Tanker p-1">MetaMask</p>
-                <p className="metamask-txt Tanker pb-1">Connect to your MetaMask Wallet</p>
-              </div>
-            </Button>
-          </div> 
-        </Modal.Body>
-        <Modal.Body>
-          <div className="text-center">
-            <Button variant="secondary">
-              <div className="walletconnect text-center">
-                <img className="walletconnect-img" src="./assets/images/w2.svg"/>
-                <p className="walletconnect-title Tanker p-1">MetaMask</p>
-                <p className="walletconnect-txt Tanker pb-1">Connect to your MetaMask Wallet</p>
-              </div>
-            </Button>
-          </div>  
-        </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={() => setOpenModal(!openModal)}><p className="walletconnect-colse Tanker pb-1">Close</p></Button>
-        </Modal.Footer>
-      </Modal>
+      <WalletConnectModal openModal = { props.openModal } setOpenModal = { props.setOpenModal }/>
     </div>
   )  
 };

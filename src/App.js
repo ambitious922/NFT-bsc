@@ -18,6 +18,7 @@ const App = (params) => {
   const sticky = useStickyHeader( 100 );
   const headerClasses = `header ${(sticky && check) ? 'sticky' : ''}`
   const { clientHeight } = ref;
+  const [openModal, setOpenModal] = useState(false);
   
   const checkChange = (value) => {
     setCheck(value);
@@ -25,20 +26,26 @@ const App = (params) => {
   
   return (
     <div>
-      <header ref={ref} className={ headerClasses }><Container><Header/></Container></header>
-      <Container className="move"><Title/></Container>
+      <header ref={ref} className={ headerClasses }><Container><Header openModal = { openModal } setOpenModal = { setOpenModal }/></Container></header>
+      <Container className="move"><Title openModal = { openModal } setOpenModal = { setOpenModal }/></Container>
       <div className="black-bg">
         <Container className="move"><Accused/></Container>
       </div>
+      <div className="grey-bg padding-top-7">
+        <Container className="move"><Details/></Container>
+        <Container className="move"><Tail/></Container>
+        <Container className="move"><Roadmap/></Container>
+      </div>
+
+
+
       <div className="release-bg">
         <Container className="move"><Release/></Container>
       </div>
       <div className="grey-bg padding-top-7">
-        <Container className="move"><Tail/></Container>
-        <Container className="move"><Lineup/></Container>
-        <Container className="move"><Roadmap/></Container>
-        <Container className="move"><Details/></Container>
-        <Container className="move"><Footer/></Container>
+        {/* <Container className="move"><Lineup/></Container> */}
+        {/* <Container className="move"><Roadmap/></Container> */}
+        <Container className="move"><Footer openModal = { openModal } setOpenModal = { setOpenModal }/></Container>
       </div>
       <Switch className="switch" onCheck={setCheck} defaultValue={ check }>Toggle Sticky</Switch>
     </div>

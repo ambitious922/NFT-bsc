@@ -12,7 +12,7 @@
     border: 3px solid #fff;
 }
 .details-title {
-    font-size: 6.5rem;
+    font-size: 4rem;
     font-weight: 500;
 }
 .details-crime .txt1,
@@ -81,4 +81,13 @@
     font-weight: 500;
     letter-spacing: 1px;
     line-height: 3rem!important;
+}
+.benefit-intro, .benefit-summary {
+    font-size: 4rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.benefit-summary {
+    font-size: 1.2rem;
+    line-height: 1.4rem!important;
 }

@@ -1,7 +1,8 @@
 import React from 'react';
+import WalletConnectModal from './modal/walletConnectModal';
 import '../styles/footer.css';
 
-function Footer() {
+function Footer(props) {
   return (
     <div className="d-block pb-5 position-relative">
       <div className="title-text Tanker mx-auto pb-5">
@@ -12,7 +13,7 @@ function Footer() {
         <img className="w-100 footer-img" src="./assets/images/3.png"/>
       </div>
       <div className="pt-5 pb-3 w-100 text-center">
-        <button className="btn btn-primary my-2 my-sm-0 Tanker"><i class="fas fa-wallet mr-2"></i>CONNECT WALLET</button>
+        <button className="btn btn-primary my-2 my-sm-0 Tanker" onClick={() => props.setOpenModal(!props.openModal)}><i class="fas fa-wallet mr-2"></i>CONNECT WALLET</button>
       </div>
       <div className="Tanker color-white footer-join-text text-center">
         Coming 30. September 2021 - 08:00 pm CEST<br/>
@@ -59,6 +60,7 @@ function Footer() {
       <div className="copyright Tanker color-grey text-center pt-3">
         &copy; 2021 CONVICTED SQUIRRELS
       </div>
+      <WalletConnectModal openModal = { props.openModal } setOpenModal = { props.setOpenModal }/>
     </div>
 )};
 

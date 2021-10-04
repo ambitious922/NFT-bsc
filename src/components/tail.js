@@ -3,8 +3,20 @@ import '../styles/tail.css';
 
 function Tail() {
   return (
-  <div id="benefits" className="padding-bottom-20">
-    <div className="d-block bg-white p-4 tail-content position-relative">
+  <div id="rarity">
+    <div className="benefit color-white pt-5">
+        <p className="Tanker text-center benefit-intro pb-3 color-green">RARITY</p>
+        <p className="rarity-summary Tanker pb-3">There are five tiers and each tier has different benefits.NFT owners have exclusive licenses to use, copy, and display their purchased NFT for personal or commercial use. Ownership and rights are transferred to the current holder of the NFT.</p>
+          <ol>
+            <li className="rarity-tier py-1"><strong className="color-green">TIER 1 NFT holders</strong> are entitled to 5% discounts on gree fees at our partnered golf courses worldwide and pro shop merchandise perchases. Free entry to special events and tournaments.</li>
+            <li className="rarity-tier py-1"><strong className="color-green">TIER 2 NFT holders</strong> are entitled to 10% discounts on gree fees at our partnered golf courses worldwide and pro shop merchandise perchases. Free entry to special events and tournaments.</li>
+            <li className="rarity-tier py-1"><strong className="color-green">TIER 3 NFT holders</strong> are entitled to 15% discounts on gree fees at our partnered golf courses worldwide and pro shop merchandise perchases. Free entry to special events and tournaments.</li>
+            <li className="rarity-tier py-1"><strong className="color-green">TIER 4 NFT holders</strong> are entitled to 20% discounts on gree fees at our partnered golf courses worldwide and pro shop merchandise perchases. Free entry to special events and tournaments.</li>
+            <li className="rarity-tier py-1"><strong className="color-green">TIER 5 NFT holders</strong> are entitled to free unlimited green fees at our partnered golf courses worldwide and pro shop merchandise perchases. Free entry to special events and tournaments.</li>
+          </ol>
+        <p className="rarity-summary Tanker">Up to three nights complimentary hotel stay during participation in our worldwide annual celebrity Colf Punks Tournaments.</p>
+      </div>
+    {/* <div className="d-block bg-white p-4 tail-content position-relative">
       <div className="d-block d-lg-flex flex-row color-grey-weight tail-top pb-4">
         <div className="tail-title Tanker col-12 col-lg-6">TAIL / TRAIT MECHANIC</div>
         <div className="tail-content col-12 col-lg-6">Tail / Trait is one of the two unique Convicted Squirrels NFT mechanics. Everyone knows squirrel tails grow based on their traits. As a result an intricate squirrel class system has emerged:</div>
@@ -32,7 +44,7 @@ function Tail() {
           </div>
         </div>
       </div>
-    </div>
+    </div> */}
   </div>
   )
 };
