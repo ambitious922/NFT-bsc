@@ -167,3 +167,19 @@ a:hover {
     border-color: #63d18f;
     box-shadow: 0 0 0 2px rgb(2 117 216 / 50%);
 }
+.metamask-img, .walletconnect-img {
+  width: 2rem;
+}
+.metamask-title, .walletconnect-title, .wallet-connect-title {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.metamask-txt, .walletconnect-txt, .walletconnect-colse {
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.walletconnect-colse {
+  line-height: 0.5!important;
+}

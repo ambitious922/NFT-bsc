@@ -237,3 +237,19 @@ font-family: 'Tanker-Regular';
 .move { 
   scroll-behavior: smooth;
 }
+.modal-header, .btn-close {
+  display: none;
+}
+.modal-body {
+  padding: 0.2rem!important;
+}
+.modal-dialog {
+  max-width: 500px;
+  margin: 8rem auto!important;
+}
+@media (min-width: 576px){
+  .modal-dialog {
+      max-width: 500px;
+      margin: 8rem auto!important;
+  }
+}
