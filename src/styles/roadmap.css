@@ -1,0 +1,86 @@
+.percent-square {
+    border-top: 4px solid #fff;
+    border-bottom: 4px solid #fff;
+}
+.percent-num {
+    font-size: 7.5rem;
+    border-right: 3px solid #fff;
+}
+.percent-text {
+    font-size: 4rem;
+    font-weight: 500;
+}
+.percent-script {
+    font-size: 1rem;
+    font-weight: 500;
+}
+.you-did-it {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.full-percent {
+    font-size: 7.5rem;
+    font-weight: 500;
+    line-height: 7.5rem;
+}
+.full-percent-text {
+    font-size: 1rem;
+    font-weight: 500;
+    max-width: 30rem;
+    margin: auto;
+}
+.percent-text-color20, .percent-text-color33, .percent-text-color50, .percent-text-color80 {
+    background-image: linear-gradient(0deg,#52cc83,#52cc83 21%,#52cc83 0,#fff 0,#fff);
+    background-color: #fff;
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.percent-text-color33 {
+    background-image: linear-gradient(0deg,#52cc83,#52cc83 34%,#52cc83 0,#fff 0,#fff);
+}
+.percent-text-color50 {
+    background-image: linear-gradient(0deg,#52cc83,#52cc83 51%,#52cc83 0,#fff 0,#fff);
+}
+.percent-text-color80 {
+    background-image: linear-gradient(0deg,#52cc83,#52cc83 81%,#52cc83 0,#fff 0,#fff);
+}
+.curve {
+  top: 270px;
+  left: 50%;
+}
+.first, .second {
+  width: 80px;
+  height: 345px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  transform: translateX(-50%)
+}
+.first {
+  border-left: 1px dashed #ddd;
+}
+.second {
+  border-right: 1px dashed #ddd;
+}
+.loadmap-key1 {
+  top: 50%;
+  left: -40px;
+  transform: translateY(-50%);
+  background-color: #ffffff30;
+  border-radius: 50%;
+  padding: 20px;
+  box-shadow: 0 0 10rem #eee
+}
+.loadmap-key2 {
+  top: 50%;
+  right: -40px;
+  transform: translateY(-50%);
+  background-color: #ffffff30;
+  border-radius: 50%;
+  padding: 20px;
+  box-shadow: 0 0 10rem #eee
+}
+.key {
+  width: 40px;
+}

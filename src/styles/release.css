@@ -1,0 +1,21 @@
+.release-w-btn {
+  font-size: 1.5rem;
+}
+.release-text h2 {
+  font-size: 9rem;
+  font-weight: 500;
+  margin: 0;
+  color: #fff;
+  line-height: 8.5rem
+}
+.the-text {
+  font-size: 3.5rem;
+  line-height: 3.5rem;
+  font-weight: 500;
+}
+.hr-line {
+  height: 4px;
+  background-color: #fff;
+  width: 5rem;
+  margin-top: 1.7rem;
+}
