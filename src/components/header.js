@@ -8,8 +8,11 @@ function Header(props) {
   const [showNarrow, setShowNarrow] = useState(false);
   return (
     <div>
-      <nav className="navbar py-2 px-3 navbar-toggleable-md navbar-inverse flex-row justify-content-between">
-        <a className="navbar-brand Tanker logo-text mr-4" href="/">CRYPTO<br/><span className="golf">GOLF</span></a>
+      <nav className="navbar py-2 px-0 px-sm-3 navbar-toggleable-md navbar-inverse flex-row justify-content-between">
+        <a className="navbar-brand Tanker mr-2 d-flex flex-row" href="/">
+          <div className="logo-img"><img className="w-100" src="./assets/images/logo2.png"/></div>
+          <div className="logo-text pl-2">CRYPTO<br/><span className="golf">GOLF</span></div>
+        </a>
 
         <div className="collapse navbar-collapse align-items-center" id="navbarsExampleDefault">
           <ul className="navbar-nav mr-auto">

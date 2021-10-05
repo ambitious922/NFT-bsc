@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import '../styles/lineup.css';
+import '../styles/rarity.css';
 
-function Lineup() {
+function Rarity() {
   const [convinced, setConvinced] = useState([
     {
       id: '01',
@@ -127,4 +127,4 @@ function Lineup() {
   )
 };
 
-export default Lineup;
+export default Rarity;

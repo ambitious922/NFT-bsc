@@ -1,6 +1,7 @@
 .percent-num {
     font-size: 2.5rem;
     border-right: 3px solid #fff;
+    min-width: 2.5rem;
 }
 .percent-text {
     font-size: 4rem;
@@ -69,22 +70,31 @@
 .right-border {
   border-right: 1px solid #ddd;
 }
+@media screen and (max-width: 992px){
+  .left-border {
+    border-left: none;
+    transform: translateX(0px);
+  }
+  .right-border {
+    border-right: none;
+  }
+}
 .loadmap-key1 {
   top: 20%;
-  left: -45px;
+  left: -36px;
   transform: translateY(-50%);
   background-color: #ffffff30;
   border-radius: 50%;
-  padding: 20px;
-  box-shadow: 0 0 10rem #eee
+  padding: 10px;
+  box-shadow: 0 0 10rem #00000020;
 }
 .loadmap-key2 {
   top: 20%;
-  right: -45px;
+  right: -36px;
   transform: translateY(-50%);
   background-color: #ffffff30;
   border-radius: 50%;
-  padding: 20px;
+  padding: 10px;
   box-shadow: 0 0 10rem #eee
 }
 .key {

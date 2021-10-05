@@ -5,14 +5,14 @@ import '../styles/footer.css';
 function Footer(props) {
   return (
     <div className="d-block pb-5 position-relative">
-      <div className="title-text Tanker mx-auto pb-5">
+      {/* <div className="title-text Tanker mx-auto pb-5">
         <p className="text-convinced color-green text-center pt-2">RESTORE JUSTICE TO THE SQUIRRELVERSE</p>
         <h2 className="text-center color-green footer-title">HELP YOUR<br/> SQUIRRELS<br/><span className="color-white">MAKE BAIL!</span></h2>
       </div>
-      <div className="w-100 py-5">
-        <img className="w-100 footer-img" src="./assets/images/3.png"/>
-      </div>
-      <div className="pt-5 pb-3 w-100 text-center">
+      <div className="w-100 py-5 text-center">
+        <img className="w-75 footer-img" src="./assets/images/3.png"/>
+      </div> */}
+      <div className="pt-2 pb-3 w-100 text-center">
         <button className="btn btn-primary my-2 my-sm-0 Tanker" onClick={() => props.setOpenModal(!props.openModal)}><i class="fas fa-wallet mr-2"></i>CONNECT WALLET</button>
       </div>
       <div className="Tanker color-white footer-join-text text-center">

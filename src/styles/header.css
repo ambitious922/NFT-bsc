@@ -100,6 +100,12 @@ a:hover {
     line-height: 1;
     color: #fff;
 }
+.logo-img { 
+  width: 3rem;
+}
+.logo-img>img {
+  border-radius: 50%;;
+}
 .golf {
     font-size: 2.6rem;
     color: #42a369;
@@ -108,7 +114,7 @@ a:hover {
     font-size: 1.2rem;
     color: #fff!important;
     font-weight: 500;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
     padding: 0 0.5rem!important;
 }
 .social-icon {

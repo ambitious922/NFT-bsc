@@ -2,14 +2,15 @@ import { useLayoutEffect, useEffect, useState, useRef } from 'react';
 import { Container } from 'react-bootstrap';
 import './App.css';
 import Header from './components/header';
-import Title from './components/title';
-import Accused from './components/accused';
+import Home from './components/home';
+import Golfpunks from './components/golfpunks';
 import Release from './components/release';
-import Tail from './components/tail';
+import Rarity from './components/rarity';
 import Lineup from './components/lineup';
 import Roadmap from './components/roadmap';
-import Details from './components/details';
+import Benefits from './components/benefits';
 import Footer from './components/footer';
+import Faq from './components/faq';
 
 
 const App = (params) => {
@@ -27,26 +28,28 @@ const App = (params) => {
   return (
     <div>
       <header ref={ref} className={ headerClasses }><Container><Header openModal = { openModal } setOpenModal = { setOpenModal }/></Container></header>
-      <Container className="move"><Title openModal = { openModal } setOpenModal = { setOpenModal }/></Container>
-      <div className="black-bg">
-        <Container className="move"><Accused/></Container>
+      <Container className="move"><Home openModal = { openModal } setOpenModal = { setOpenModal }/></Container>
+      <div className="grey-bg">
+        <Container className="move"><Golfpunks/></Container>
       </div>
       <div className="grey-bg padding-top-7">
-        <Container className="move"><Details/></Container>
-        <Container className="move"><Tail/></Container>
+        <Container className="move"><Benefits/></Container>
+        <Container className="move"><Rarity/></Container>
         <Container className="move"><Roadmap/></Container>
+        <Container className="move"><Faq/></Container>
+        <Container className="move"><Footer openModal = { openModal } setOpenModal = { setOpenModal }/></Container>
       </div>
 
 
 
-      <div className="release-bg">
+      {/* <div className="release-bg">
         <Container className="move"><Release/></Container>
       </div>
       <div className="grey-bg padding-top-7">
-        {/* <Container className="move"><Lineup/></Container> */}
-        {/* <Container className="move"><Roadmap/></Container> */}
+        <Container className="move"><Lineup/></Container>
+        <Container className="move"><Roadmap/></Container>
         <Container className="move"><Footer openModal = { openModal } setOpenModal = { setOpenModal }/></Container>
-      </div>
+      </div> */}
       <Switch className="switch" onCheck={setCheck} defaultValue={ check }>Toggle Sticky</Switch>
     </div>
   );

@@ -1,0 +1,93 @@
+.intro-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.details-first {
+    border: 3px solid #fff;
+}
+.details-title,
+.details-crime,
+.details-bail,
+.details-amount {
+    border: 3px solid #fff;
+}
+.details-title {
+    font-size: 4rem;
+    font-weight: 500;
+}
+.details-crime .txt1,
+.details-bail .txt1,
+.details-amount .txt1 {
+    font-size: 2.2rem;
+    font-weight: 500;
+}
+.details-crime .txt2,
+.details-bail .txt2,
+.details-amount .txt2 {
+    font-size: 3.4rem;
+    font-weight: 500;
+}
+@media screen and (max-width: 992px) {
+    .details-first {
+        border: none;
+    }
+    .details-title {
+        border-top: 3px solid #fff !important;
+        border-bottom: 3px solid #fff !important;
+        border-left: none!important;
+        border-right: none!important;
+    }
+    .details-crime {
+        border-bottom: 3px solid #fff !important;
+        border-left: none!important;
+        border-right: none!important;
+    }
+    .details-bail {
+        border-bottom: 3px solid #fff !important;
+        border-left: none!important;
+        border-right: none!important;
+    }
+    .details-amount {
+        border-bottom: 3px solid #fff !important;
+        border-left: none!important;
+        border-right: none!important;
+    }
+}
+.details-content-detail {
+    border-bottom: 3px solid #303030;
+}
+.details-content-number {
+    border-right: 3px solid #42a369;
+    min-width: 5rem;
+    max-height: 5rem;
+    height: 5rem;
+}
+.details-content-title {
+    font-size: 3rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.details-content-text {
+    font-size: 1.2rem;
+    line-height: 1!important;
+}
+.question { 
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px
+}
+.details-id { 
+    font-size: 7rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 3rem!important;
+}
+.benefit-intro, .benefit-summary {
+    font-size: 4rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.benefit-summary {
+    font-size: 1.2rem;
+    line-height: 1.4rem!important;
+}
