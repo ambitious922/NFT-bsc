@@ -32,7 +32,7 @@ const App = (params) => {
       <div className="grey-bg">
         <Container className="move"><Golfpunks/></Container>
       </div>
-      <div className="grey-bg padding-top-7">
+      <div className="grey-bg">
         <Container className="move"><Benefits/></Container>
         <Container className="move"><Rarity/></Container>
         <Container className="move"><Roadmap/></Container>

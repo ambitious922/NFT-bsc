@@ -77,6 +77,9 @@ function Faq() {
           our own IOS and Android App in the future for real time online tee time bookings. Please see our 
           Roadmap for more details.</p>
       </div> */}
+      <div className="title-text Tanker mx-auto pb-3">
+        <h2 className="text-center">FAQ</h2>
+      </div>
       <div className="details-content">
         {details.map((item, key) => (
         <div key={ key } className={item.id == '07' ? 'd-block d-lg-flex flex-row details-content-detail border-0 py-2' : 'py-2 d-block d-lg-flex flex-row details-content-detail'}>
@@ -87,7 +90,7 @@ function Faq() {
             </div>
             <div className="px-3 details-content-title Tanker color-white">{ item.question }</div>
           </div>
-          <div className="p-2 details-content-text color-white col-12 col-lg-6">
+          <div className="p-2 details-content-text color-grey col-12 col-lg-6">
             { item.text }
           </div>
         </div>

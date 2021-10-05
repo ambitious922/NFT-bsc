@@ -4,7 +4,7 @@ import '../styles/footer.css';
 
 function Footer(props) {
   return (
-    <div className="d-block pb-5 position-relative">
+    <div className="d-block py-5 position-relative">
       {/* <div className="title-text Tanker mx-auto pb-5">
         <p className="text-convinced color-green text-center pt-2">RESTORE JUSTICE TO THE SQUIRRELVERSE</p>
         <h2 className="text-center color-green footer-title">HELP YOUR<br/> SQUIRRELS<br/><span className="color-white">MAKE BAIL!</span></h2>
@@ -13,14 +13,14 @@ function Footer(props) {
         <img className="w-75 footer-img" src="./assets/images/3.png"/>
       </div> */}
       <div className="pt-2 pb-3 w-100 text-center">
-        <button className="btn btn-primary my-2 my-sm-0 Tanker" onClick={() => props.setOpenModal(!props.openModal)}><i class="fas fa-wallet mr-2"></i>CONNECT WALLET</button>
+        <button className="btn btn-primary my-2 my-sm-0 Tanker" onClick={() => props.setOpenModal(!props.openModal)}><img className="mr-2 wallet-lock" src="./assets/images/lock.png"/>CONNECT WALLET</button>
       </div>
       <div className="Tanker color-white footer-join-text text-center">
         Coming 30. September 2021 - 08:00 pm CEST<br/>
-        JOIN CONVICTED SQUIRRELS GANG AT:
+        JOIN CONVICTED SQUIRRELS GANG AT :
       </div>
       <div className="d-block text-center pt-3 pb-5">
-        <a className="social-icon px-2" href="https://discord.gg/cUXA3wyRJp" target="_blank"><i className="fab fa-discord"></i></a>
+        <a className="social-icon px-3" href="https://discord.gg/cUXA3wyRJp" target="_blank"><i className="fab fa-discord"></i></a>
         <a className="social-icon px-2" href="https://twitter.com/SquirrelsNFT" target="_blank"><i className="fab fa-twitter"></i></a>
         <a className="social-icon px-2" href="https://lootex.io/" target="_blank">
           <svg viewBox="0 0 1052 357" xmlns="http://www.w3.org/2000/svg" fill="#DF0078" class="_2TeTK">
@@ -57,8 +57,8 @@ function Footer(props) {
           </svg>
         </a>
       </div>
-      <div className="copyright Tanker color-grey text-center pt-3">
-        &copy; 2021 CONVICTED SQUIRRELS
+      <div className="copyright color-grey text-center pt-3">
+        &copy; 2021 <a className="navbar-brand" href="/">cryptogolf.io</a>
       </div>
       <WalletConnectModal openModal = { props.openModal } setOpenModal = { props.setOpenModal }/>
     </div>

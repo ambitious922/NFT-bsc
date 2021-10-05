@@ -6,10 +6,14 @@
   border-radius: 4rem; */
 }
 .footer-join-text {
-  font-size: 1.6rem;
-  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.2rem!important;
 }
 .copyright {
-  font-size: 1.6rem;
-  letter-spacing: 1px;
+  font-size: 0.8rem;
+  font-family: "roboto";
+}
+.copyright a {
+  font-size: 1rem;
+  text-decoration: underline;
 }

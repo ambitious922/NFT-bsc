@@ -48,7 +48,8 @@
   padding-bottom: 12rem;
 }
 .rarity-summary {
-  font-size: 2rem;
+  font-size: 1rem;
+  line-height: 1.4rem!important;
   letter-spacing: 2px;
 }
 .rarity-tier {

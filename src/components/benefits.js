@@ -25,11 +25,23 @@ function Benefits() {
     }
   ])
   return (
-    <div id="benefits" className="d-block padding-6">
+    <div id="benefits" className="d-block padding-top-7">
       {/* <div className="intro d-flex flex-row justify-content-between w-100 py-3">
         <p className="Tanker intro-text color-grey">GMI P.D. BLOCKCHAIN COUNTY</p>
         <p className="Tanker intro-text color-grey">CASE NO.01 / 2021/SEPT</p>
       </div> */}
+      <div className="title-text col-12 Tanker mx-auto text-center">
+        <h2 className="pb-4">BENEFITS
+        {/* <span className="flexibleh700_w200">B</span>
+          <span className="flexibleh800_w200">E</span>
+          <span className="flexibleh900_w200">N</span>
+          <span className="flexibleh1000_w200">E</span>
+          <span className="flexibleh1000_w200">F</span>
+          <span className="flexibleh900_w200">I</span>
+          <span className="flexibleh800_w200">T</span>
+          <span className="flexibleh700_w200">S</span></h2> */}
+        </h2>
+      </div>
       <div className="details">
         <div className="details-first">
           <div className="details-first-title d-block d-lg-flex flex-row">
@@ -53,7 +65,7 @@ function Benefits() {
       </div>
       <div className="benefit color-white pt-5">
         <p className="Tanker text-center benefit-intro pb-3">WHY <span className="color-green">CRYPTOGOLF</span> IS NOT JUST ANOTHER NFT</p>
-        <p className="benefit-summary">We want to set the new standard for NFT. Each CryptoGOlf NFT is unique with different rarity. 
+        <p className="about-description color-grey-light">We want to set the new standard for NFT. Each CryptoGOlf NFT is unique with different rarity. 
           Depending on the rarity of your CryptoGolf NFT, the holder is entitled to real world benefits 
           such as unlimited free green fees at our partnered golf courses worldwide, pro shop merchandise 
           discounts, and participation in special events and tournaments. Each NFT holder will also be 

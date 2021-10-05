@@ -44,9 +44,11 @@
   }
 }
 .about-description {
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: 300;
   letter-spacing: 1px;
+  font-family: "roboto";
+  line-height: 1.2!important;
 }
 .btn-grey-shadow {
   --btn-loader-color: #191e28;

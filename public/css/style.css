@@ -116,15 +116,325 @@ font-family: 'Tanker-Regular';
        font-style: normal;
 } */
 @font-face {
-  font-family: 'Tanker-Regular';
+  font-family: 'Tanker';
+    src: url('../font/Tanker-Regular.woff2') format('woff2'),
+         url('../font/Tanker-Regular.woff') format('woff');
+         font-weight: 400;
+         font-display: swap;
+         font-style: normal;
+}
+@font-face {
+  font-family: 'Flexible';
     src: url('../font/flexible-h300w200-webfont.woff2') format('woff2'),
          url('../font/flexible-h300w200-webfont.woff') format('woff');
          font-weight: 400;
          font-display: swap;
          font-style: normal;
 }
+@font-face {
+  font-family: 'flexiblevariable';
+  src: url('../font/flexible-variable-webfont.woff2') format('woff2'),
+       url('../font/flexible-variable-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+.flexibleh200_w200 { 
+  font-family: 'flexibleh200_w200';
+}
+
+
+
+@font-face {
+  font-family: 'flexibleh200_w200';
+  src: url('../font/flexible-h200w200-webfont.woff2') format('woff2'),
+       url('../font/flexible-h200w200-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.flexibleh200_w300 { 
+  font-family: 'flexibleh200_w300';
+}
+
+
+@font-face {
+  font-family: 'flexibleh200_w300';
+  src: url('../font/flexible-h200w300-webfont.woff2') format('woff2'),
+       url('../font/flexible-h200w300-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.flexibleh200_w400 { 
+  font-family: 'flexibleh200_w400';
+}
+
+
+@font-face {
+  font-family: 'flexibleh200_w400';
+  src: url('../font/flexible-h200w400-webfont.woff2') format('woff2'),
+       url('../font/flexible-h200w400-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.flexibleh200_w500 { 
+  font-family: 'flexibleh200_w500';
+}
+
+
+@font-face {
+  font-family: 'flexibleh200_w500';
+  src: url('../font/flexible-h200w500-webfont.woff2') format('woff2'),
+       url('../font/flexible-h200w500-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+.flexibleh200_w600 { 
+  font-family: 'flexibleh200_w600';
+}
+
+
+
+@font-face {
+  font-family: 'flexibleh200_w600';
+  src: url('../font/flexible-h200w600-webfont.woff2') format('woff2'),
+       url('../font/flexible-h200w600-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+.flexibleh200_w700 { 
+  font-family: 'flexibleh200_w700';
+}
+
+
+
+@font-face {
+  font-family: 'flexibleh200_w700';
+  src: url('../font/flexible-h200w700-webfont.woff2') format('woff2'),
+       url('../font/flexible-h200w700-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.flexibleh200_w800 { 
+  font-family: 'flexibleh200_w800';
+}
+
+
+@font-face {
+  font-family: 'flexibleh200_w800';
+  src: url('../font/flexible-h200w800-webfont.woff2') format('woff2'),
+       url('../font/flexible-h200w800-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.flexibleh200_w900 { 
+  font-family: 'flexibleh200_w900';
+}
+
+
+@font-face {
+  font-family: 'flexibleh200_w900';
+  src: url('../font/flexible-h200w900-webfont.woff2') format('woff2'),
+       url('../font/flexible-h200w900-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.flexibleh200_w1000 { 
+  font-family: 'flexibleh200_w1000';
+}
+
+
+@font-face {
+  font-family: 'flexibleh200_w1000';
+  src: url('../font/flexible-h200w1000-webfont.woff2') format('woff2'),
+       url('../font/flexible-h200w1000-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.flexibleh300_w200 { 
+  font-family: 'flexibleh300_w200';
+}
+
+
+@font-face {
+  font-family: 'flexibleh300_w200';
+  src: url('../font/flexible-h300w200-webfont.woff2') format('woff2'),
+       url('../font/flexible-h300w200-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+.flexibleh400_w200 { 
+  font-family: 'flexibleh400_w200';
+}
+
+
+
+@font-face {
+  font-family: 'flexibleh400_w200';
+  src: url('../font/flexible-h400w200-webfont.woff2') format('woff2'),
+       url('../font/flexible-h400w200-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.flexibleh500_w200 { 
+  font-family: 'flexibleh500_w200';
+}
+
+
+@font-face {
+  font-family: 'flexibleh500_w200';
+  src: url('../font/flexible-h500w200-webfont.woff2') format('woff2'),
+       url('../font/flexible-h500w200-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+.flexibleh600_w200 { 
+  font-family: 'flexibleh600_w200';
+}
+
+
+
+@font-face {
+  font-family: 'flexibleh600_w200';
+  src: url('../font/flexible-h600w200-webfont.woff2') format('woff2'),
+       url('../font/flexible-h600w200-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.flexibleh700_w200 { 
+  font-family: 'flexibleh700_w200';
+}
+
+
+@font-face {
+  font-family: 'flexibleh700_w200';
+  src: url('../font/flexible-h700w200-webfont.woff2') format('woff2'),
+       url('../font/flexible-h700w200-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.flexibleh800_w200 { 
+  font-family: 'flexibleh800_w200';
+}
+
+
+@font-face {
+  font-family: 'flexibleh800_w200';
+  src: url('../font/flexible-h800w200-webfont.woff2') format('woff2'),
+       url('../font/flexible-h800w200-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.flexibleh900_w200 { 
+  font-family: 'flexibleh900_w200';
+}
+
+
+@font-face {
+  font-family: 'flexibleh900_w200';
+  src: url('../font/flexible-h900w200-webfont.woff2') format('woff2'),
+       url('../font/flexible-h900w200-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.flexibleh1000_w200 { 
+  font-family: 'flexibleh1000_w200';
+}
+
+
+@font-face {
+  font-family: 'flexibleh1000_w200';
+  src: url('../font/flexible-h1000w200-webfont.woff2') format('woff2'),
+       url('../font/flexible-h1000w200-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+.golfpunks-g,
+.golfpunks-o,
+.golfpunks-l,
+.golfpunks-f,
+.golfpunks-p,
+.golfpunks-u,
+.golfpunks-n,
+.golfpunks-k,
+.golfpunks-s {
+  letter-spacing: 2px;
+}
+.home-wg {
+  font-family: 'flexibleh1000_w200';
+}
+.home-wo {
+  font-family: 'flexibleh800_w200';
+}
+.home-wl {
+  font-family: 'flexibleh700_w200';
+}
+.logo-text .w1 {
+  font-family: 'flexibleh1000_w200';
+}
+.logo-text .w2, .golfpunks-p {
+  font-family: 'flexibleh800_w200';
+}
+.golfpunks-f, .golfpunks-u {
+  font-family: 'flexibleh700_w200';
+}
+.logo-text .w3, .golfpunks-l, .golfpunks-n {
+  font-family: 'flexibleh600_w200';
+}
+.logo-text .w4, .golfpunks-o, .golfpunks-k {
+  font-family: 'flexibleh400_w200';
+}
+.logo-text .w5, .golfpunks-g, .golfpunks-s {
+  font-family: 'flexibleh200_w200';
+}
+.logo-text .w6 {
+  font-family: 'flexibleh200_w300';
+}
+.logo-text .w7 {
+  font-family: 'flexibleh400_w200';
+}
+.logo-text .w8 {
+  font-family: 'flexibleh600_w200';
+}
+.logo-text .w9 {
+  font-family: 'flexibleh800_w200';
+}
+.logo-text .w10 {
+  font-family: 'flexibleh1000_w200';
+}
+.Flexible {
+  font-family: 'Flexible';
+}
 .Tanker {
-    font-family: 'Tanker-Regular';
+    font-family: 'Tanker';
 }
 .title-img {
   width: 100%;
@@ -133,7 +443,7 @@ font-family: 'Tanker-Regular';
   min-height: 25rem!important;
 }
 .padding-6 {
-  padding: 2rem 0 4rem;
+  padding: 2rem 0 0rem;
 }
 .padding-15 {
   padding: 15rem 0;
@@ -182,7 +492,7 @@ font-family: 'Tanker-Regular';
   background-size: 100% 100%;
 }
 .padding-top-7 {
-  padding-top: 5rem;
+  padding-top: 3rem;
 }
 @media (min-width: 1200px) {
   .container {
@@ -209,8 +519,8 @@ font-family: 'Tanker-Regular';
   }
 }
 .btn { 
-  padding: .4rem .6rem!important;
-  font-size: 1.2rem!important;
+  padding: .3rem .4rem!important;
+  font-size: 0.8rem!important;
 }
 @media screen and (max-width: 1200px){
   .padding-15 {

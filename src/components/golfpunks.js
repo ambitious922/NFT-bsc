@@ -107,7 +107,16 @@ function Golfpunks() {
         </div>
       </div> */}
       <div className="title-text col-12 Tanker mx-auto text-center">
-        <h2 className="pt-4">MEET SOME OF OUR <br/><span>GOLFPUNKS</span></h2>
+        <h2 className="pt-4">MEET SOME OF OUR <br/>
+          <span className="golfpunks-g">G</span>
+          <span className="golfpunks-o">O</span>
+          <span className="golfpunks-l">L</span>
+          <span className="golfpunks-f">F</span>
+          <span className="golfpunks-p">P</span>
+          <span className="golfpunks-u">U</span>
+          <span className="golfpunks-n">N</span>
+          <span className="golfpunks-k">K</span>
+          <span className="golfpunks-s">S</span></h2>
         <div>
           <p className="about-description color-grey-light py-3">Golf fanatics meet blockchain technology
            on the course. CryptoGolf Punks collectable is a non-fungible token(NFT) programmatically generated 
