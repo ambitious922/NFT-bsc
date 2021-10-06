@@ -11,9 +11,9 @@ function Header(props) {
       <nav className="navbar py-2 px-0 px-sm-3 navbar-toggleable-md navbar-inverse flex-row justify-content-between">
         <a className="navbar-brand Tanker mr-4 position-relative" href="/">
           <div className="logo-img position-absolute">
-            <img className="w-100" src="./assets/images/logo2.png"/>
+            <img className="w-100" src="./assets/images/logo1.png"/>
           </div>
-          <div className="logo-text pl-2">
+          <div className="logo-text">
             <span className="w1">C</span>
             <span className="w2">R</span>
             <span className="w3">Y</span>

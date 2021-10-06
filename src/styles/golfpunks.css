@@ -85,4 +85,6 @@
 .nft-images img {
   border: 2px solid rgb(14, 231, 14)
 }
-
+.images {
+  margin: 0 -0.5rem;
+}

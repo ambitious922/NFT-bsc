@@ -21,6 +21,9 @@
     font-weight: 500;
     line-height: 7.5rem;
 }
+.translateY1 {
+  transform: translateY(1rem)!important;
+}
 .full-percent-text {
     font-size: 1rem;
     font-weight: 500;

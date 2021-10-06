@@ -45,15 +45,15 @@ function Benefits() {
       <div className="details">
         <div className="details-first">
           <div className="details-first-title d-block d-lg-flex flex-row">
-            <p className="p-2 border-right border-bottom border-top-0 border-left-0 Tanker col-12 col-lg-6 color-green details-title">BENEFITS&SPECIFICATIONS</p>
+            <p className="p-2 border-right border-bottom border-top-0 border-left-0 Tanker col-12 col-lg-6 color-green details-title">BENEFITS & RARITY</p>
             <div className="p-2 border-right-0 border-bottom border-top-0 border-left-0 details-crime col-12 col-lg-6">
               <p className="Tanker color-green txt1">BLOCKCHAIN</p>
-              <p className="Tanker color-white txt2">BINANCE SMART CHAIN(BSC)</p>
+              <p className="Tanker color-white txt2">BINANCE SMART CHAIN (BSC)</p>
             </div>
           </div>
           <div className="details-first-title d-block d-lg-flex flex-row">
             <div className="p-2 border-right border-bottom-0 border-top-0 border-left-0 details-bail col-12 col-lg-6">
-              <p className="Tanker color-green txt1">PUBLISH CALE 11.11.21</p>
+              <p className="Tanker color-green txt1">PUBLIC SALE 11.11.21</p>
               <p className="Tanker color-white txt2">0.05 BNB + GAS FEE</p>
             </div>
             <div className="p-2 border-right-0 border-bottom-0 border-top-0 border-left-0 details-amount col-12 col-lg-6">
@@ -64,8 +64,17 @@ function Benefits() {
         </div>
       </div>
       <div className="benefit color-white pt-5">
-        <p className="Tanker text-center benefit-intro pb-3">WHY <span className="color-green">CRYPTOGOLF</span> IS NOT JUST ANOTHER NFT</p>
-        <p className="about-description color-grey-light">We want to set the new standard for NFT. Each CryptoGOlf NFT is unique with different rarity. 
+        <p className="Tanker text-center benefit-intro pb-3">WHY <span className="color-green">CRYPTOGOLF
+          </span> IS NOT JUST ANOTHER NFT</p>
+        <p className="about-description color-grey-light">RARITY. There are five classes of GOLGPUNKS and 
+        each tier have different benefits.  The tiers are PRO, BREAK 70, BREAK 80, BREAK 90 and BREAK 100. 
+        The PRO tiers are entitled to 25%, BREAK 70 20%, BREAK 80 15%, BREAK 90 10% and BREAK 100 5% discounts 
+        on green fees and pro shop merchandise purchases.  All tiers have exclusive access and free entry to 
+        events and tournaments. The PRO tiers receive additional perks and benefits such as complimentary 
+        hotel stay during events and tournaments such as the Annual Celebrity GOLFPUNKS Tournament.<br/><br/>
+        Each NFT owner have exclusive licenses to use, copy, and display his or her purchased NFTs for personal
+         or commercial use. However, ownership and rights are transferred to the current holder of the NFT.We 
+         want to set the new standard for NFT. Each CryptoGOlf NFT is unique with different rarity.<br/><br/>
           Depending on the rarity of your CryptoGolf NFT, the holder is entitled to real world benefits 
           such as unlimited free green fees at our partnered golf courses worldwide, pro shop merchandise 
           discounts, and participation in special events and tournaments. Each NFT holder will also be 

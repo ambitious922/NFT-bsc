@@ -15,11 +15,7 @@ function Footer(props) {
       <div className="pt-2 pb-3 w-100 text-center">
         <button className="btn btn-primary my-2 my-sm-0 Tanker" onClick={() => props.setOpenModal(!props.openModal)}><img className="mr-2 wallet-lock" src="./assets/images/lock.png"/>CONNECT WALLET</button>
       </div>
-      <div className="Tanker color-white footer-join-text text-center">
-        Coming 30. September 2021 - 08:00 pm CEST<br/>
-        JOIN CONVICTED SQUIRRELS GANG AT :
-      </div>
-      <div className="d-block text-center pt-3 pb-5">
+      <div className="d-block text-center pt-3 pb-3">
         <a className="social-icon px-3" href="https://discord.gg/cUXA3wyRJp" target="_blank"><i className="fab fa-discord"></i></a>
         <a className="social-icon px-2" href="https://twitter.com/SquirrelsNFT" target="_blank"><i className="fab fa-twitter"></i></a>
         <a className="social-icon px-2" href="https://lootex.io/" target="_blank">

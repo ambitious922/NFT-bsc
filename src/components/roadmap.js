@@ -6,12 +6,12 @@ function Roadmap() {
     {
       id: 1,
       percent: '10%',
-      text: 'GIveaway of 20 NFTs for Discord users and Twitter followers.'
+      text: 'Giveaway of 20 NFTs for Discord users and Twitter followers.'
     },
     {
       id: 2,
       percent: '25%',
-      text: 'Listing on Rarity.io, Lootex.io and otherBSC NFT marketplaces to provide trading and liquity.'
+      text: 'Listing on Rarity.io, Lootex.io and other BSC NFT marketplaces to provide trading and liquity.'
     },
     {
       id: 3,
@@ -31,15 +31,15 @@ function Roadmap() {
   ])
   return (
     <div id="roadmap" className="d-block py-5 position-relative">
-      <div className="title-text Tanker mx-auto pb-5">
-        <h2 className="text-center">LOADMAP</h2>
+      <div className="title-text Tanker mx-auto">
+        <h2 className="text-center">ROADMAP</h2>
         <p className="text-convinced color-green text-center py-2">OF OUR BRILLIANT PLAN</p>
       </div>
       {roadmap.map((item, key) => (
       <div key={ key } className="percent-step w-100">
         <div className='d-flex flex-row percent-height100'>
           <div className={ (item.id%2 == 1) ? 'd-none d-lg-block col-6 pb-5' : 'd-none' }></div>
-          <div className={ (item.percent == '100%') ? ((item.id%2 == 1) ? 'left-border col-12 col-lg-6 pl-0 pr-0 pl-lg-5 position-relative' : 'right-border col-12 col-lg-6 pl-0 pr-0 pr-lg-5 position-relative') : ((item.id%2 == 1) ? 'left-border col-12 col-lg-6 pl-0 pr-0 pl-lg-5 pb-5 position-relative' : 'right-border col-12 col-lg-6 pl-0 pr-0 pr-lg-5 pb-5 position-relative')}>
+          <div className={ (item.percent == '10%') ? ((item.id%2 == 1) ? 'left-border col-12 col-lg-6 pl-0 pr-0 pl-lg-5 pb-5 position-relative pt-5' : 'pt-5 right-border col-12 col-lg-6 pl-0 pr-0 pr-lg-5 pb-5 position-relative') : ((item.id%2 == 1) ? 'left-border col-12 col-lg-6 pl-0 pr-0 pl-lg-5 pb-5 position-relative' : 'right-border col-12 col-lg-6 pl-0 pr-0 pr-lg-5 pb-5 position-relative')}>
             <div className="d-flex flex-row">
               <p className="percent-num Tanker color-white pr-2">
                 <span className={ (item.percent == '10%') ? 'percent-text-color10' : 'd-none'}>{ item.percent }</span>
@@ -51,7 +51,7 @@ function Roadmap() {
               {/* <p className="percent-text Tanker color-white pl-4">SQUIRRELS RELEASED</p> */}
               <p className="percent-script color-grey pl-2">{ item.text }</p>
             </div>
-            <div className={ (item.id%2 == 1) ? 'position-absolute loadmap-key1 d-none d-lg-block' : 'position-absolute loadmap-key2 d-none d-lg-block' }>
+            <div className={ (item.percent == '10%') ? ((item.id%2 == 1) ? 'position-absolute loadmap-key1 d-none d-lg-block translateY1' : 'translateY1 position-absolute loadmap-key2 d-none d-lg-block') : ((item.id%2 == 1) ? 'position-absolute loadmap-key1 d-none d-lg-block' : 'position-absolute loadmap-key2 d-none d-lg-block') }>
               <img className="key" src="./assets/images/logo1.png"/>
             </div>
           </div>
