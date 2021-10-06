@@ -22,7 +22,7 @@
     line-height: 7.5rem;
 }
 .translateY1 {
-  transform: translateY(1rem)!important;
+  transform: translateY(1.6rem)!important;
 }
 .full-percent-text {
     font-size: 1rem;
@@ -67,11 +67,11 @@
   border-right: 1px dashed #ddd;
 }
 .left-border {
-  border-left: 1px solid #ddd;
+  border-left: 1px solid #fff;
   transform: translateX(-1px);
 }
 .right-border {
-  border-right: 1px solid #ddd;
+  border-right: 1px solid #fff;
 }
 @media screen and (max-width: 992px){
   .left-border {
@@ -83,7 +83,7 @@
   }
 }
 .loadmap-key1 {
-  top: 20%;
+  top: 10%;
   left: -36px;
   transform: translateY(-50%);
   background-color: #ffffff30;
@@ -92,7 +92,7 @@
   box-shadow: 0 0 10rem #00000020;
 }
 .loadmap-key2 {
-  top: 20%;
+  top: 14%;
   right: -36px;
   transform: translateY(-50%);
   background-color: #ffffff30;

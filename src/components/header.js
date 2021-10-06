@@ -8,7 +8,7 @@ function Header(props) {
   const [showNarrow, setShowNarrow] = useState(false);
   return (
     <div>
-      <nav className="navbar py-2 px-0 px-sm-3 navbar-toggleable-md navbar-inverse flex-row justify-content-between">
+      <nav className="navbar pt-3 px-0 px-sm-3 navbar-toggleable-md navbar-inverse flex-row justify-content-between">
         <a className="navbar-brand Tanker mr-4 position-relative" href="/">
           <div className="logo-img position-absolute">
             <img className="w-100" src="./assets/images/logo1.png"/>
@@ -27,25 +27,28 @@ function Header(props) {
           </div>
         </a>
         <div className="d-flex flex-row">
-          <div className="collapse navbar-collapse align-items-center" id="navbarsExampleDefault">
-            <ul className="navbar-nav mr-auto pr-3">
+          <div className="collapse navbar-collapse align-items-center mr-2" id="navbarsExampleDefault">
+            <ul className="navbar-nav mr-auto pr-4">
               <li className="nav-item px-1">
                 <a className="nav-link header-text Tanker" href="#home">HOME</a>
               </li>
               <li className="nav-item px-1">
-                <a className="nav-link header-text Tanker" href="#golfpunks">GOLFPUNKS</a>
+                <a className="nav-link header-text Tanker" href="#golfpunks">ABOUT</a>
               </li>
               <li className="nav-item px-1">
                 <a className="nav-link header-text Tanker" href="#benefits">BENEFITS</a>
               </li>
-              <li className="nav-item px-1">
+              {/* <li className="nav-item px-1">
                 <a className="nav-link header-text Tanker" href="#rarity">RARITY</a>
-              </li>
+              </li> */}
               <li className="nav-item px-1">
                 <a className="nav-link header-text Tanker" href="#roadmap">ROADMAP</a>
               </li>
               <li className="nav-item px-1">
                 <a className="nav-link header-text Tanker" href="#faq">FAQ</a>
+              </li>
+              <li className="nav-item px-1">
+                <a className="nav-link header-text Tanker" href="/">MYGOLFPUNKS</a>
               </li>
             </ul>
             <div className="d-none d-xl-block">
@@ -89,8 +92,8 @@ function Header(props) {
             
           </div>
           <div >
-            <button className="btn ml-2 btn-primary my-2 my-sm-0 Tanker" onClick={() => props.setOpenModal(!props.openModal)}><img className="mr-2 wallet-lock" src="./assets/images/lock.png"/>CONNECT WALLET</button>
-            <button className="ml-2 mt-3 navbar-toggler" onClick={() => setShowNarrow(!showNarrow)} type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <button className="btn mr-2 mr-lg-0 btn-primary my-2 my-sm-0 Tanker" onClick={() => props.setOpenModal(!props.openModal)}><img className="mr-2 wallet-lock" src="./assets/images/lock.png"/>CONNECT WALLET</button>
+            <button className="mt-3 navbar-toggler" onClick={() => setShowNarrow(!showNarrow)} type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
           </div>
@@ -98,11 +101,12 @@ function Header(props) {
       </nav>
       {showNarrow && <div className="narrowLinks d-lg-none py-2">
         <a href="#home" className="py-1 Tanker" onClick={() => setShowNarrow(!showNarrow)}>HOME</a>
-        <a href="#golfpunks" className="py-1 Tanker" onClick={() => setShowNarrow(!showNarrow)}>GOLFPUNKS</a>
+        <a href="#golfpunks" className="py-1 Tanker" onClick={() => setShowNarrow(!showNarrow)}>ABOUT</a>
         <a href="#benefits" className="py-1 Tanker" onClick={() => setShowNarrow(!showNarrow)}>BENEFITS</a>
-        <a href="#rarity" className="py-1 Tanker" onClick={() => setShowNarrow(!showNarrow)}>RARITY</a>
+        {/* <a href="#rarity" className="py-1 Tanker" onClick={() => setShowNarrow(!showNarrow)}>RARITY</a> */}
         <a href="#roadmap" className="py-1 Tanker" onClick={() => setShowNarrow(!showNarrow)}>ROADMAP</a>
         <a href="#faq" className="py-1 Tanker" onClick={() => setShowNarrow(!showNarrow)}>FAQ</a>
+        <a href="/" className="py-1 Tanker" onClick={() => setShowNarrow(!showNarrow)}>MYGOLFPUNKS</a>
       </div>
       }
       <WalletConnectModal openModal = { props.openModal } setOpenModal = { props.setOpenModal }/>

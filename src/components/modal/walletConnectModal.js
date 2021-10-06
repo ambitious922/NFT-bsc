@@ -4,9 +4,9 @@ import '../../styles/modal.css';
 export default function WalletConnectModal(props) {
     return (
         <Modal show={ props.openModal }>
-          <Modal.Header closeButton>
+          {/* <Modal.Header closeButton>
             <Modal.Title><p className="Tanker wallet-connect-title">WALLET CONNECTION</p></Modal.Title>
-          </Modal.Header>
+          </Modal.Header> */}
           <Modal.Body>
             <div className="text-center">
               <Button variant="secondary" className="w-75">
@@ -24,7 +24,7 @@ export default function WalletConnectModal(props) {
                 <div className="walletconnect text-center">
                   <img className="walletconnect-img my-2" src="./assets/images/w2.svg"/>
                   <p className="walletconnect-title Tanker p-1">WalletConnect</p>
-                  <p className="walletconnect-txt pb-1">Scan with WalletConnect to connect</p>
+                  <p className="walletconnect-txt pb-1">Connect to your Trust Wallet</p>
                 </div>
               </Button>
             </div>  

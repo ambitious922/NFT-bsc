@@ -433,6 +433,36 @@ font-family: 'Tanker-Regular';
 .logo-text .w10 {
   font-family: 'flexibleh1000_w200';
 }
+.logo-text .w1 {
+  font-family: 'flexibleh1000_w200';
+}
+.logo-text .w2 {
+  font-family: 'flexibleh600_w200';
+}
+.logo-text .w3 {
+  font-family: 'flexibleh400_w200';
+}
+.logo-text .w4 {
+  font-family: 'flexibleh300_w200';
+}
+.logo-text .w5 {
+  font-family: 'flexibleh200_w200';
+}
+.logo-text .w6 {
+  font-family: 'flexibleh200_w200';
+}
+.logo-text .w7 {
+  font-family: 'flexibleh300_w200';
+}
+.logo-text .w8 {
+  font-family: 'flexibleh400_w200';
+}
+.logo-text .w9 {
+  font-family: 'flexibleh600_w200';
+}
+.logo-text .w10 {
+  font-family: 'flexibleh1000_w200';
+}
 .Flexible {
   font-family: 'Flexible';
 }

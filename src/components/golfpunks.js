@@ -120,7 +120,7 @@ function Golfpunks() {
         <div>
           <p className="about-description text-left color-grey-light py-3">Golf fanatics meet blockchain technology
            on the course. CryptoGolf Punks collectable is a non-fungible token (NFT) programmatically generated 
-           with Python and stored as an ERC721 token on the Binance Smart Chain(BSC) blockchain.</p>
+           with Python and stored as an ERC721 token on the Binance Smart Chain (BSC) blockchain.</p>
         </div>
         <div className="images w-100">
           {nftimages.map((item, key) => (

@@ -106,8 +106,11 @@ a:hover {
   width: 0.8rem;
 }
 .logo-img { 
-  width: 2.5rem;
-  left: 1.4rem;
+  /* width: 2.5rem;
+  left: 1.4rem; */
+  width: 4rem;
+  left: .6rem;
+  top: -.9rem;
 }
 .title-text {
   padding-right: 0!important;

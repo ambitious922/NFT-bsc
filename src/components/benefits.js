@@ -31,7 +31,8 @@ function Benefits() {
         <p className="Tanker intro-text color-grey">CASE NO.01 / 2021/SEPT</p>
       </div> */}
       <div className="title-text col-12 Tanker mx-auto text-center">
-        <h2 className="pb-4">BENEFITS
+        <h2 className="pb-4"><span className="color-green">CRYPTOGOLF
+          </span> IS NOT JUST<br/> ANOTHER NFT
         {/* <span className="flexibleh700_w200">B</span>
           <span className="flexibleh800_w200">E</span>
           <span className="flexibleh900_w200">N</span>
@@ -64,24 +65,17 @@ function Benefits() {
         </div>
       </div>
       <div className="benefit color-white pt-5">
-        <p className="Tanker text-center benefit-intro pb-3">WHY <span className="color-green">CRYPTOGOLF
-          </span> IS NOT JUST ANOTHER NFT</p>
-        <p className="about-description color-grey-light">RARITY. There are five classes of GOLGPUNKS and 
+        <p className="about-description color-grey-light">We bring values and benefits to our NFT holders with real use case in the real world including but not 
+        limited to unlimited free green fees and pro shop merchandise discounts with our partnered golf courses 
+        worldwide, participation in special events and tournaments including our annual celebrity golfpunks 
+        tournament, online tee time booking and a marketplace for trading your NFT. Please see our Roadmap 
+        for more details.<br/><br/>
+        RARITY. There are five classes of GOLGPUNKS and 
         each tier have different benefits.  The tiers are PRO, BREAK 70, BREAK 80, BREAK 90 and BREAK 100. 
         The PRO tiers are entitled to 25%, BREAK 70 20%, BREAK 80 15%, BREAK 90 10% and BREAK 100 5% discounts 
         on green fees and pro shop merchandise purchases.  All tiers have exclusive access and free entry to 
         events and tournaments. The PRO tiers receive additional perks and benefits such as complimentary 
-        hotel stay during events and tournaments such as the Annual Celebrity GOLFPUNKS Tournament.<br/><br/>
-        Each NFT owner have exclusive licenses to use, copy, and display his or her purchased NFTs for personal
-         or commercial use. However, ownership and rights are transferred to the current holder of the NFT.We 
-         want to set the new standard for NFT. Each CryptoGOlf NFT is unique with different rarity.<br/><br/>
-          Depending on the rarity of your CryptoGolf NFT, the holder is entitled to real world benefits 
-          such as unlimited free green fees at our partnered golf courses worldwide, pro shop merchandise 
-          discounts, and participation in special events and tournaments. Each NFT holder will also be 
-          airdropped our GOLF utility token that are used in our ecosystem for purchased of green fees, 
-          pro shop merchandlses, foods or swap to other cryptocurrency on exchanges for cash. We will build 
-          our own IOS and Android App in the future for real time online tee time bookings. Please see our 
-          Roadmap for more details.</p>
+        hotel stay during events and tournaments such as the Annual Celebrity GOLFPUNKS Tournament.</p>
       </div>
       {/* <div className="details-content pt-5">
         {details.map((item, key) => (

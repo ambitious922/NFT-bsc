@@ -30,7 +30,7 @@ function Roadmap() {
     },
   ])
   return (
-    <div id="roadmap" className="d-block py-5 position-relative">
+    <div id="roadmap" className="d-block pt-5 position-relative">
       <div className="title-text Tanker mx-auto">
         <h2 className="text-center">ROADMAP</h2>
         <p className="text-convinced color-green text-center py-2">OF OUR BRILLIANT PLAN</p>
@@ -39,7 +39,7 @@ function Roadmap() {
       <div key={ key } className="percent-step w-100">
         <div className='d-flex flex-row percent-height100'>
           <div className={ (item.id%2 == 1) ? 'd-none d-lg-block col-6 pb-5' : 'd-none' }></div>
-          <div className={ (item.percent == '10%') ? ((item.id%2 == 1) ? 'left-border col-12 col-lg-6 pl-0 pr-0 pl-lg-5 pb-5 position-relative pt-5' : 'pt-5 right-border col-12 col-lg-6 pl-0 pr-0 pr-lg-5 pb-5 position-relative') : ((item.id%2 == 1) ? 'left-border col-12 col-lg-6 pl-0 pr-0 pl-lg-5 pb-5 position-relative' : 'right-border col-12 col-lg-6 pl-0 pr-0 pr-lg-5 pb-5 position-relative')}>
+          <div className={ (item.percent == '100%') ? ((item.percent == '10%') ? ((item.id%2 == 1) ? 'col-12 col-lg-6 pl-0 pr-0 pl-lg-5 pb-5 position-relative pt-5' : 'pt-5 col-12 col-lg-6 pl-0 pr-0 pr-lg-5 pb-5 position-relative') : ((item.id%2 == 1) ? 'col-12 col-lg-6 pl-0 pr-0 pl-lg-5 pb-5 position-relative' : 'col-12 col-lg-6 pl-0 pr-0 pr-lg-5 pb-5 position-relative')) : ((item.percent == '10%') ? ((item.id%2 == 1) ? 'left-border col-12 col-lg-6 pl-0 pr-0 pl-lg-5 pb-5 position-relative pt-5' : 'pt-5 right-border col-12 col-lg-6 pl-0 pr-0 pr-lg-5 pb-5 position-relative') : ((item.id%2 == 1) ? 'left-border col-12 col-lg-6 pl-0 pr-0 pl-lg-5 pb-5 position-relative' : 'right-border col-12 col-lg-6 pl-0 pr-0 pr-lg-5 pb-5 position-relative'))}>
             <div className="d-flex flex-row">
               <p className="percent-num Tanker color-white pr-2">
                 <span className={ (item.percent == '10%') ? 'percent-text-color10' : 'd-none'}>{ item.percent }</span>

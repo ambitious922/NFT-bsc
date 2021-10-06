@@ -34,7 +34,7 @@ const App = (params) => {
       </div>
       <div className="grey-bg">
         <Container className="move"><Benefits/></Container>
-        <Container className="move"><Rarity/></Container>
+        {/* <Container className="move"><Rarity/></Container> */}
         <Container className="move"><Roadmap/></Container>
         <Container className="move"><Faq/></Container>
         <Container className="move"><Footer openModal = { openModal } setOpenModal = { setOpenModal }/></Container>

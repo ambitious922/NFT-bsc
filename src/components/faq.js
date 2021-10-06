@@ -5,18 +5,18 @@ function Faq() {
   const [details, setDetials] = useState([
     {
       id: '01',
-      question: 'CRYPTOGOLF NFT PUNKS IS ON WHICH BLOCKCHAIN?',
+      question: 'GOLFPUNKS IS ON WHICH BLOCKCHAIN?',
       text: 'We are on Binance Smart Chain (BSC).'
     },
     {
       id: '02',
       question: 'WHAT IS THE TOTAL SUPPLY? ',
-      text: 'A total of 5000 unique CryptoGolf NFT Punks will be created.'
+      text: 'A total of 5000 unique GolfPunks will be created.'
     },
     {
       id: '03',
-      question: 'WHERE AND HOW TO BUY CRYPTOGOLF NFT PUNKS?',
-      text: "You can buy a CryptoGolf NFT punks with Binance Smart Chain (BSC BEP20) BNB cryptocurrency coin by connecting your Metamask or Trust wallet and interact with our BSC smart contract. "
+      question: 'WHERE AND HOW TO BUY GOLFPUNKS?',
+      text: "You can buy a GOLFPUNKS with Binance Smart Chain (BSC) BEP-20 cryptocurrency by connecting your Metamask or Trust wallet and interact with our BSC smart contract. "
     },
     {
       id: '04',
@@ -26,11 +26,11 @@ function Faq() {
     {
         id: '05',
         question: 'HOW MUCH DOES IT COST TO MINT AN NFT?',
-        text: 'Every CryptoGolf NFT punks collectable is unique and costs 0.0 BNB each for the first 1000 minted. The price will go up 0.10 BNB increments for every 1000 mints thereafter until all NFTs are sold out.'
+        text: 'Every GOLFPUNKS collectable is unique and costs 0.5 BNB each for the first 1000 minted. The price will go up 0.10 BNB increments for every 1000 mints thereafter until all NFTs are sold out.'
       },
       {
         id: '06',
-        question: 'CAN I SELL MY CRYPTOGOLF NFT PUNKS?',
+        question: 'CAN I SELL MY GOLFPUNKS?',
         text: "Yes, you can sell at the open market on Lootex.io and other NFT marketplaces that support our BSC NFT.  We will build our very own NFT marketplace in the future."
       },
       {
@@ -83,14 +83,14 @@ function Faq() {
       <div className="details-content">
         {details.map((item, key) => (
         <div key={ key } className={item.id == '07' ? 'd-block d-lg-flex flex-row details-content-detail border-0 py-2' : 'py-2 d-block d-lg-flex flex-row details-content-detail'}>
-          <div className="p-2 details-content-number-title d-flex flex-row col-12 col-lg-6">
-            <div className="details-content-number px-3">
+          <div className="details-content-number-title d-flex flex-row col-12 col-lg-6 px-0">
+            <div className="details-content-number pr-3">
               <p className="question Tanker color-green">QUESTION</p>
               <p className="Tanker details-id color-green">{ item.id }</p>
             </div>
-            <div className="px-3 details-content-title Tanker color-white">{ item.question }</div>
+            <div className="pr-3 pl-2 details-content-title Tanker color-white">{ item.question }</div>
           </div>
-          <div className="p-2 details-content-text color-grey col-12 col-lg-6">
+          <div className="details-content-text color-grey col-12 col-lg-6 px-0">
             { item.text }
           </div>
         </div>
