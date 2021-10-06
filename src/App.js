@@ -1,5 +1,7 @@
 import { useLayoutEffect, useEffect, useState, useRef } from 'react';
 import { Container } from 'react-bootstrap';
+import { useWallet, UseWalletProvider } from 'use-wallet';
+import Web3 from 'web3';
 import './App.css';
 import Header from './components/header';
 import Home from './components/home';
@@ -17,18 +19,30 @@ const App = (params) => {
   const ref = useRef();
   let [check, setCheck] = useState(true);
   const sticky = useStickyHeader( 100 );
-  const headerClasses = `header ${(sticky && check) ? 'sticky' : ''}`
+  const headerClasses = `header ${(sticky && check) ? 'sticky' : ''}`;
   const { clientHeight } = ref;
   const [openModal, setOpenModal] = useState(false);
-  
+  const wallet = useWallet();
   const checkChange = (value) => {
     setCheck(value);
   };
   
   return (
     <div>
-      <header ref={ref} className={ headerClasses }><Container><Header openModal = { openModal } setOpenModal = { setOpenModal }/></Container></header>
-      <Container className="move"><Home openModal = { openModal } setOpenModal = { setOpenModal }/></Container>
+      <header ref={ref} className={ headerClasses }>
+        <Container>
+          <Header 
+          wallet = { wallet }
+          openModal = { openModal } 
+          setOpenModal = { setOpenModal }/>
+        </Container>
+      </header>
+      <Container className="move">
+        <Home 
+          wallet = { wallet }
+          openModal = { openModal } 
+          setOpenModal = { setOpenModal }/>
+      </Container>
       <div className="grey-bg">
         <Container className="move"><Golfpunks/></Container>
       </div>
@@ -37,7 +51,12 @@ const App = (params) => {
         {/* <Container className="move"><Rarity/></Container> */}
         <Container className="move"><Roadmap/></Container>
         <Container className="move"><Faq/></Container>
-        <Container className="move"><Footer openModal = { openModal } setOpenModal = { setOpenModal }/></Container>
+        <Container className="move">
+          <Footer 
+            wallet = { wallet }
+            openModal = { openModal } 
+            setOpenModal = { setOpenModal }/> 
+        </Container>
       </div>
 
 

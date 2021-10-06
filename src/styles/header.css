@@ -145,6 +145,32 @@ a:hover {
     width: 100%;
     z-index: 1;
 }
+.wallet-status-show {
+  text-align: center;    
+  position: absolute;
+  animation: slide 0.3s;
+  background-color: #52cc83;
+  width: 6.82rem;
+  z-index: 1;
+  top: 1.7rem;
+  border-radius: 0.25rem;
+}
+.wallet-status-show p {
+  font-size: .6rem;
+  letter-spacing: 0;
+  color: #fff;
+  font-weight: 400;
+}
+.wallet-status-show p:hover {
+  background-color: #2b832894;
+}
+.wallet-status-show p:nth-child(1), 
+.wallet-status-show p:nth-child(2) {
+  border-bottom: 1px solid #fff;
+}
+.roboto {
+  font-family: 'roboto';
+}
 .narrowLinks a {
     text-decoration: none;
     display: block;

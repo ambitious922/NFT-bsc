@@ -65,11 +65,11 @@ function Benefits() {
         </div>
       </div>
       <div className="benefit color-white pt-5">
-        <p className="about-description color-grey-light">We bring values and benefits to our NFT holders with real use case in the real world including but not 
-        limited to unlimited free green fees and pro shop merchandise discounts with our partnered golf courses 
-        worldwide, participation in special events and tournaments including our annual celebrity golfpunks 
-        tournament, online tee time booking and a marketplace for trading your NFT. Please see our Roadmap 
-        for more details.<br/><br/>
+        <p className="about-description color-grey-light">We bring values and benefits to our NFT holders 
+        with real world use case including but not limited to free green fees and pro shop merchandise 
+        discounts with our partnered golf courses worldwide, participation in special events and tournaments 
+        including our annual celebrity golfpunks tournament, online tee time bookings and a marketplace for 
+        trading your NFT. Please see our Roadmap for more details.<br/><br/>
         RARITY. There are five classes of GOLGPUNKS and 
         each tier have different benefits.  The tiers are PRO, BREAK 70, BREAK 80, BREAK 90 and BREAK 100. 
         The PRO tiers are entitled to 25%, BREAK 70 20%, BREAK 80 15%, BREAK 90 10% and BREAK 100 5% discounts 

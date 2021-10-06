@@ -6,6 +6,7 @@ import '../styles/header.css';
 
 function Header(props) {
   const [showNarrow, setShowNarrow] = useState(false);
+  const [showWalletStatus, setShowWalletStatus] = useState(false);
   return (
     <div>
       <nav className="navbar pt-3 px-0 px-sm-3 navbar-toggleable-md navbar-inverse flex-row justify-content-between">
@@ -91,8 +92,21 @@ function Header(props) {
             </div>
             
           </div>
-          <div >
-            <button className="btn mr-2 mr-lg-0 btn-primary my-2 my-sm-0 Tanker" onClick={() => props.setOpenModal(!props.openModal)}><img className="mr-2 wallet-lock" src="./assets/images/lock.png"/>CONNECT WALLET</button>
+          <div className="d-flex flex-row align-items-center">
+            { (props.wallet.status == 'connected') ? (
+              <div className="d-flex flex-row position-relative">
+                <button className="btn btn-primary mr-1 px-3 my-0 Tanker">MINT NOW</button>
+                <button className="btn mr-lg-0 btn-primary px-2 my-0 Tanker mr-1 mr-lg-0" onClick = {() => setShowWalletStatus(true)}><img className="wallet-lock" src="./assets/images/lock.png"/></button>
+                {showWalletStatus && <div className="wallet-status-show py-1 px-1">
+                  <p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)}>{ props.wallet.account.slice(0, 8) }...{ props.wallet.account.slice(34, 42) }</p>
+                  <p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)}>{ props.wallet.balance }{ props.wallet.chainId == 56 ? 'BNB' : '' }</p>
+                  <p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)&props.wallet.reset()}>Logout</p>
+                </div>
+                }
+              </div>
+              ) : (
+                <button className="btn mr-2 mr-lg-0 btn-primary my-2 my-sm-0 Tanker" onClick={() => props.setOpenModal(!props.openModal)}><img className="mr-2 wallet-lock" src="./assets/images/lock.png"/>CONNECT WALLET</button>
+              ) }
             <button className="mt-3 navbar-toggler" onClick={() => setShowNarrow(!showNarrow)} type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
@@ -109,7 +123,10 @@ function Header(props) {
         <a href="/" className="py-1 Tanker" onClick={() => setShowNarrow(!showNarrow)}>MYGOLFPUNKS</a>
       </div>
       }
-      <WalletConnectModal openModal = { props.openModal } setOpenModal = { props.setOpenModal }/>
+      <WalletConnectModal 
+        wallet = { props.wallet }
+        openModal = { props.openModal } 
+        setOpenModal = { props.setOpenModal }/>
     </div>
   )  
 };

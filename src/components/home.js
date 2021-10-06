@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/home.css';
 import WalletConnectModal from './modal/walletConnectModal';
 
+
 function Home(props) {
+  const [showWalletStatus, setShowWalletStatus] = useState(false);
   return (
     <div id="home" className="d-block d-xl-flex flex-row padding-6">
       <div className="title-text col-12 col-md-9 col-lg-8 col-xl-6 Tanker pt-4 mx-auto">
@@ -13,11 +15,24 @@ function Home(props) {
       </div>
       <div className="col-12 col-md-9 col-lg-8 col-xl-6 title-img mx-auto">
         <div className="title-connect-wallet p-4">
-          <button className="btn btn-primary my-2 my-sm-0 Tanker" onClick={() => props.setOpenModal(!props.openModal)}><img className="mr-2 wallet-lock" src="./assets/images/lock.png"/>CONNECT WALLET</button>
+          { (props.wallet.status == 'connected') ? (
+          <div className="d-flex flex-row position-relative">
+            <button className="btn btn-primary mr-1 px-3 my-0 Tanker">MINT NOW</button>
+            <button className="btn mr-lg-0 btn-primary px-2 my-0 Tanker mr-1 mr-lg-0" onClick = {() => setShowWalletStatus(true)}><img className="wallet-lock" src="./assets/images/lock.png"/></button>
+            {showWalletStatus && <div className="wallet-status-show py-1 px-1">
+              <p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)}>{ props.wallet.account.slice(0, 8) }...{ props.wallet.account.slice(34, 42) }</p>
+              <p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)}>{ props.wallet.balance }{ props.wallet.chainId == 56 ? 'BNB' : '' }</p>
+              <p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)&props.wallet.reset()}>Logout</p>
+            </div>
+            }
+          </div>
+          ) : (
+            <button className="btn mr-2 mr-lg-0 btn-primary my-2 my-sm-0 Tanker" onClick={() => props.setOpenModal(!props.openModal)}><img className="mr-2 wallet-lock" src="./assets/images/lock.png"/>CONNECT WALLET</button>
+          ) }
           <p className="public-text Tanker pt-2">Public sale open</p>
         </div>
       </div>
-      <WalletConnectModal openModal = { props.openModal } setOpenModal = { props.setOpenModal }/>
+      <WalletConnectModal wallet = { props.wallet } openModal = { props.openModal } setOpenModal = { props.setOpenModal }/>
     </div>
   )
 };
