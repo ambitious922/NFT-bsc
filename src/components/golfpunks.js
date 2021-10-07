@@ -124,7 +124,7 @@ function Golfpunks() {
         </div>
         <div className="images w-100">
           {nftimages.map((item, key) => (
-            <div className="float-left col-6 col-md-4 col-lg-3 col-xl-2 p-2 nft-images">
+            <div className="w-100 nft-images">
               <img className="w-100" src={ item.src }/>
             </div>
           ))}

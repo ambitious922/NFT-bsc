@@ -86,5 +86,26 @@
   border: 2px solid rgb(14, 231, 14)
 }
 .images {
-  margin: 0 -0.5rem;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 2fr 2fr 0fr;
+  gap: 0.8rem 0.8rem;
+}
+@media screen and (max-width: 992px){
+  .images { 
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr 0fr;
+  }
+}
+@media screen and (max-width: 768px){
+  .images { 
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr 0fr;
+  }
+}
+@media screen and (max-width: 576px){
+  .images { 
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr 0fr;
+  }
 }
