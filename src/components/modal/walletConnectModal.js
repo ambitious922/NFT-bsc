@@ -11,7 +11,10 @@ export default function WalletConnectModal(props) {
         if (error) {
           throw error;
         }
-        console.log(payload)
+        console.log('aa', payload)
+        console.log('bb', payload.params[0])
+        props.setAccountAddress(payload.params[0].accounts[0]);
+        props.setTrustConnect(payload.event)
         // Get provided accounts and chainId
         // const { accounts, chainId } = payload.params[0];
       

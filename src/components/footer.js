@@ -15,16 +15,18 @@ function Footer(props) {
         <img className="w-75 footer-img" src="./assets/images/3.png"/>
       </div> */}
       <div className="pt-2 pb-3 w-100 text-center">
-        { (props.wallet.status == 'connected') ? (
+        { (props.wallet.status == 'connected')||(props.trustConnect == 'connect') ? (
         <div className="d-flex flex-row position-relative justify-content-center">
           <button className="btn btn-primary mr-1 px-3 my-0 Tanker">MINT NOW</button>
           <button className="btn mr-lg-0 btn-primary px-2 my-0 Tanker mr-1 mr-lg-0" onClick = {() => setShowWalletStatus(true)}><img className="wallet-lock" src="./assets/images/lock.png"/></button>
           {showWalletStatus && <div className="wallet-status-show py-1 px-1">
-            <p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)}>{ props.wallet.account.slice(0, 8) }...{ props.wallet.account.slice(34, 42) }</p>
+            { (props.wallet.status == 'connected') && <><p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)}>{ props.wallet.account.slice(0, 8) }...{ props.wallet.account.slice(34, 42) }</p>
             <p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)}>{ props.wallet.balance }{ props.wallet.chainId == 56 ? 'BNB' : '' }</p>
-            <p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)&props.wallet.reset()}>Logout</p>
-          </div>
-          }
+            <p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)&props.wallet.reset()}>Logout</p></>}
+            { (props.trustConnect == 'connect') && <><p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)}>{ props.accountAddress.slice(0, 8) }...{ props.accountAddress.slice(34, 42) }</p>
+            <p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)}>{ props.wallet.balance }{ props.wallet.chainId == 56 ? 'BNB' : '' }</p>
+            <p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)&props.wallet.reset()}>Logout</p></>}
+          </div>}
         </div>
         ) : (
           <button className="btn mr-2 mr-lg-0 btn-primary my-2 my-sm-0 Tanker" onClick={() => props.setOpenModal(!props.openModal)}><img className="mr-2 wallet-lock" src="./assets/images/lock.png"/>CONNECT WALLET</button>
@@ -71,7 +73,14 @@ function Footer(props) {
       <div className="copyright color-grey text-center pt-3">
         &copy; 2021 <a className="navbar-brand" href="/">cryptogolf.io</a>
       </div>
-      <WalletConnectModal wallet = { props.wallet } openModal = { props.openModal } setOpenModal = { props.setOpenModal }/>
+      <WalletConnectModal 
+        wallet = { props.wallet }
+        accountAddress = { props.accountAddress }
+        setAccountAddress = { props.setAccountAddress } 
+        trustConnect = { props.trustConnect }
+        setTrustConnect = { props.setTrustConnect }
+        openModal = { props.openModal } 
+        setOpenModal = { props.setOpenModal }/>
     </div>
 )};
 

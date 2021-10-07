@@ -26,13 +26,19 @@ const App = (params) => {
   const checkChange = (value) => {
     setCheck(value);
   };
-  
+  const [accountAddress, setAccountAddress] = useState('');
+  const [trustConnect, setTrustConnect] = useState('');
+
   return (
     <div>
       <header ref={ref} className={ headerClasses }>
         <Container>
           <Header 
           wallet = { wallet }
+          accountAddress = { accountAddress }
+          setAccountAddress = { setAccountAddress }
+          trustConnect = { trustConnect }
+          setTrustConnect = { setTrustConnect }
           openModal = { openModal } 
           setOpenModal = { setOpenModal }/>
         </Container>
@@ -40,6 +46,10 @@ const App = (params) => {
       <Container className="move">
         <Home 
           wallet = { wallet }
+          accountAddress = { accountAddress }
+          setAccountAddress = { setAccountAddress }
+          trustConnect = { trustConnect }
+          setTrustConnect = { setTrustConnect }
           openModal = { openModal } 
           setOpenModal = { setOpenModal }/>
       </Container>
@@ -54,6 +64,10 @@ const App = (params) => {
         <Container className="move">
           <Footer 
             wallet = { wallet }
+            accountAddress = { accountAddress }
+            setAccountAddress = { setAccountAddress }
+            trustConnect = { trustConnect }
+            setTrustConnect = { setTrustConnect }
             openModal = { openModal } 
             setOpenModal = { setOpenModal }/> 
         </Container>
