@@ -103,3 +103,13 @@
 .key {
   width: 50px;
 }
+.roadmap-description, .roadmap-description p {
+  font-size: 2rem;
+  font-family: 'TANKER';
+  line-height: 1.5!important;
+}
+.roadmap-description p {
+  font-size: 4rem;
+  font-family: 'TANKER';
+  line-height: 1!important
+}

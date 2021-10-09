@@ -21,10 +21,10 @@ function Footer(props) {
           <button className="btn mr-lg-0 btn-primary px-2 my-0 Tanker mr-1 mr-lg-0" onClick = {() => setShowWalletStatus(true)}><img className="wallet-lock" src="./assets/images/lock.png"/></button>
           {showWalletStatus && <div className="wallet-status-show py-1 px-1">
             { (props.wallet.status == 'connected') && <><p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)}>{ props.wallet.account.slice(0, 8) }...{ props.wallet.account.slice(34, 42) }</p>
-            <p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)}>{ props.wallet.balance }{ props.wallet.chainId == 56 ? 'BNB' : '' }</p>
+            <p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)}>{ (props.wallet.balance*10e-19).toFixed(3) }{ props.wallet.chainId == 56 ? 'BNB' : '' }</p>
             <p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)&props.wallet.reset()}>Logout</p></>}
             { (props.trustConnect == 'connect') && <><p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)}>{ props.accountAddress.slice(0, 8) }...{ props.accountAddress.slice(34, 42) }</p>
-            <p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)}>{ props.wallet.balance }{ props.wallet.chainId == 56 ? 'BNB' : '' }</p>
+            <p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)}>{ (props.wallet.balance*10e-19).toFixed(3) }{ props.wallet.chainId == 56 ? 'BNB' : '' }</p>
             <p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)&props.wallet.reset()}>Logout</p></>}
           </div>}
         </div>

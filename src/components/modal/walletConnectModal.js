@@ -72,7 +72,7 @@ export default function WalletConnectModal(props) {
                 <div className="metamask text-center">
                   <img className="metamask-img my-2" src="./assets/images/w1.svg"/>
                   <p className="metamask-title Tanker p-1">MetaMask</p>
-                  <p className="metamask-txt pb-1">Connect to your MetaMask Wallet</p>
+                  <p className="metamask-txt pb-1">Connect to MetaMask Wallet</p>
                 </div>
               </Button>
             </div> 
@@ -83,7 +83,7 @@ export default function WalletConnectModal(props) {
                 <div className="walletconnect text-center">
                   <img className="walletconnect-img my-2" src="./assets/images/w2.svg"/>
                   <p className="walletconnect-title Tanker p-1">WalletConnect</p>
-                  <p className="walletconnect-txt pb-1">Connect to your Trust Wallet</p>
+                  <p className="walletconnect-txt pb-1"> Scan and Connect to Trust Wallet</p>
                 </div>
               </Button>
             </div>  

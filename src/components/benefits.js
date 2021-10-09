@@ -68,13 +68,13 @@ function Benefits() {
         <p className="about-description color-grey-light">We bring values and benefits to our NFT holders 
         with real world use case including but not limited to free green fees and pro shop merchandise 
         discounts with our partnered golf courses worldwide, participation in special events and tournaments 
-        including our annual celebrity golfpunks tournament, online tee time bookings and a marketplace for 
+        including our annual celebrity GOLFPUNKS tournament, online tee time bookings and a marketplace for 
         trading your NFT. Please see our Roadmap for more details.<br/><br/>
         RARITY. There are five classes of GOLGPUNKS and 
-        each tier have different benefits.  The tiers are PRO, BREAK 70, BREAK 80, BREAK 90 and BREAK 100. 
-        The PRO tiers are entitled to 25%, BREAK 70 20%, BREAK 80 15%, BREAK 90 10% and BREAK 100 5% discounts 
-        on green fees and pro shop merchandise purchases.  All tiers have exclusive access and free entry to 
-        events and tournaments. The PRO tiers receive additional perks and benefits such as complimentary 
+        each class has different benefits.  The classes are PRO, BREAK 70, BREAK 80, BREAK 90 and BREAK 100. 
+        The PRO classes are entitled to 25%, BREAK 70 20%, BREAK 80 15%, BREAK 90 10% and BREAK 100 5% discounts 
+        on green fees and pro shop merchandise purchases.  All classes have exclusive access and free entry to 
+        events and tournaments. The PRO classes receive additional perks and benefits such as complimentary 
         hotel stay during events and tournaments such as the Annual Celebrity GOLFPUNKS Tournament.</p>
       </div>
       {/* <div className="details-content pt-5">

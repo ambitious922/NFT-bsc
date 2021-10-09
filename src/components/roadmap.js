@@ -58,6 +58,8 @@ function Roadmap() {
         </div>
       </div>
       ))}
+      <div className="color-white roadmap-description text-center"><p className="text-center pb-2"><span className="color-green">GOLFCHICKS</span> will be free<br/> to mint for all <span className="color-green">GOLFPUNKS</span><br/> holders after sell out.</p> 
+      Future utility includes breeding for <span className="color-green">CRYPTOKIDS</span></div>
       {/* <svg viewBox="0 0 160 160">
         <path d="M200,0 C200,0 100,100 100, 100 200, 300"  stroke="white"  />
       </svg> */}

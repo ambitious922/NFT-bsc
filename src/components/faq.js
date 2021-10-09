@@ -11,7 +11,7 @@ function Faq() {
     {
       id: '02',
       question: 'WHAT IS THE TOTAL SUPPLY? ',
-      text: 'A total of 5000 unique GolfPunks will be created.'
+      text: 'A total of 5000 unique GOLFPUNKS will be created.'
     },
     {
       id: '03',
@@ -36,7 +36,7 @@ function Faq() {
       {
         id: '07',
         question: 'DO WE HAVE A SUPPORT COMMUNITY?',
-        text: "Yes, CryptoGolf Punks are here to help. Join our Discord channel and Twitter to connect with support and fellow golf punks."
+        text: "Yes, GOLFPUNKS are here to help. Join our Discord channel and Twitter to connect with support and fellow golfers."
       }
   ])
   return (
