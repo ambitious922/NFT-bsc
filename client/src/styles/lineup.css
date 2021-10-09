@@ -1,0 +1,51 @@
+.text-convinced {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.crime-ticket {
+ border-radius: 0.7rem;
+}
+.clear {
+  clear: both;
+}
+.crime-title {
+  border-bottom: 3px solid #000;
+}
+.crime-number {
+  border-left: 3px solid #000;
+}
+.crime-number, .crime-title-text {
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+.crime-line {
+  padding: 2rem 0 6rem;
+}
+.crime-footer {
+  border-top: 3px solid #000;
+}
+.crime-footer p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+}
+.crime-img {
+  top: 5rem;
+}
+.warning-text {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+.stay-text {
+  font-size: 1rem;
+  line-height:1.3rem;
+  font-weight: 500;
+}
+@media screen and (max-width: 576px) {
+  .warning-text {
+    font-size: 3rem;
+    line-height:3rem;
+    font-weight: 500;
+  }
+}

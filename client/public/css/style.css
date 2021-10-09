@@ -1,0 +1,643 @@
+/* #app {
+    height: 200vh;
+    background-color: #FFFFFF;
+    background-image: linear-gradient(180deg, #FFFFFF 0%, #6284FF 50%, #FF0000 100%);
+  }
+  
+  .header {
+    text-align: center;
+    box-shadow: 0 0 20px #ccc;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 8px;
+    line-height: 0;
+    padding: 40px 0;
+    background: rgba(#f3f3f3, 1);
+  }
+  
+  .sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    animation: slide 0.3s;
+    box-shadow: 0 20px 30px rgba(#000, 0.2);
+    background: rgba(#f3f3f3, 0.5);
+  }
+  
+  .sticky label {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .switch {
+    padding: 20px;
+    position: fixed;
+    bottom: 20px;
+    right: 0;
+    background: 0;
+    background-color: #FBAB7E;
+    border-radius: 20px 0 0 20px;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+    animation: pulse 4s infinite;
+  }
+  
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2, 1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  } */
+  /* @font-face {
+    font-family: 'Tanker';
+    src:  url('./font/Tanker-Regular.woff2') format('woff2'),
+          url('./font/Tanker-Regular.woff') format('woff'),
+          url('./font/Tanker-Regular.ttf')  format('truetype');
+  } */
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 99%;
+  scroll-behavior: smooth;
+}
+:root {
+    font-size: 24px;
+}
+@media (max-width: 1200px) {
+  :root {
+    font-size: 20px;
+  }
+}
+@media (max-width: 992px) {
+  :root {
+    font-size: 20px;
+  }
+}
+@media (max-width: 768px) {
+  :root {
+    font-size: 16px;
+  }
+}
+* {
+  line-height: .8!important;
+}
+
+body {
+    font-size: 1rem;
+}   
+
+/* @font-face {
+font-family: 'Tanker-Regular';
+  src: url('../font/Tanker-Regular.woff2') format('woff2'),
+       url('../font/Tanker-Regular.woff') format('woff'),
+       url('../font/Tanker-Regular.ttf') format('truetype');
+       font-weight: 400;
+       font-display: swap;
+       font-style: normal;
+} */
+@font-face {
+  font-family: 'Tanker';
+    src: url('../font/Tanker-Regular.woff2') format('woff2'),
+         url('../font/Tanker-Regular.woff') format('woff');
+         font-weight: 400;
+         font-display: swap;
+         font-style: normal;
+}
+@font-face {
+  font-family: 'Flexible';
+    src: url('../font/flexible-h300w200-webfont.woff2') format('woff2'),
+         url('../font/flexible-h300w200-webfont.woff') format('woff');
+         font-weight: 400;
+         font-display: swap;
+         font-style: normal;
+}
+@font-face {
+  font-family: 'flexiblevariable';
+  src: url('../font/flexible-variable-webfont.woff2') format('woff2'),
+       url('../font/flexible-variable-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+.flexibleh200_w200 { 
+  font-family: 'flexibleh200_w200';
+}
+.flexible { 
+  font-family: 'Flexible';
+}
+
+
+
+@font-face {
+  font-family: 'flexibleh200_w200';
+  src: url('../font/flexible-h200w200-webfont.woff2') format('woff2'),
+       url('../font/flexible-h200w200-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.flexibleh200_w300 { 
+  font-family: 'flexibleh200_w300';
+}
+
+
+@font-face {
+  font-family: 'flexibleh200_w300';
+  src: url('../font/flexible-h200w300-webfont.woff2') format('woff2'),
+       url('../font/flexible-h200w300-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.flexibleh200_w400 { 
+  font-family: 'flexibleh200_w400';
+}
+
+
+@font-face {
+  font-family: 'flexibleh200_w400';
+  src: url('../font/flexible-h200w400-webfont.woff2') format('woff2'),
+       url('../font/flexible-h200w400-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.flexibleh200_w500 { 
+  font-family: 'flexibleh200_w500';
+}
+
+
+@font-face {
+  font-family: 'flexibleh200_w500';
+  src: url('../font/flexible-h200w500-webfont.woff2') format('woff2'),
+       url('../font/flexible-h200w500-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+.flexibleh200_w600 { 
+  font-family: 'flexibleh200_w600';
+}
+
+
+
+@font-face {
+  font-family: 'flexibleh200_w600';
+  src: url('../font/flexible-h200w600-webfont.woff2') format('woff2'),
+       url('../font/flexible-h200w600-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+.flexibleh200_w700 { 
+  font-family: 'flexibleh200_w700';
+}
+
+
+
+@font-face {
+  font-family: 'flexibleh200_w700';
+  src: url('../font/flexible-h200w700-webfont.woff2') format('woff2'),
+       url('../font/flexible-h200w700-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.flexibleh200_w800 { 
+  font-family: 'flexibleh200_w800';
+}
+
+
+@font-face {
+  font-family: 'flexibleh200_w800';
+  src: url('../font/flexible-h200w800-webfont.woff2') format('woff2'),
+       url('../font/flexible-h200w800-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.flexibleh200_w900 { 
+  font-family: 'flexibleh200_w900';
+}
+
+
+@font-face {
+  font-family: 'flexibleh200_w900';
+  src: url('../font/flexible-h200w900-webfont.woff2') format('woff2'),
+       url('../font/flexible-h200w900-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.flexibleh200_w1000 { 
+  font-family: 'flexibleh200_w1000';
+}
+
+
+@font-face {
+  font-family: 'flexibleh200_w1000';
+  src: url('../font/flexible-h200w1000-webfont.woff2') format('woff2'),
+       url('../font/flexible-h200w1000-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.flexibleh300_w200 { 
+  font-family: 'flexibleh300_w200';
+}
+
+
+@font-face {
+  font-family: 'flexibleh300_w200';
+  src: url('../font/flexible-h300w200-webfont.woff2') format('woff2'),
+       url('../font/flexible-h300w200-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+.flexibleh400_w200 { 
+  font-family: 'flexibleh400_w200';
+}
+
+
+
+@font-face {
+  font-family: 'flexibleh400_w200';
+  src: url('../font/flexible-h400w200-webfont.woff2') format('woff2'),
+       url('../font/flexible-h400w200-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.flexibleh500_w200 { 
+  font-family: 'flexibleh500_w200';
+}
+
+
+@font-face {
+  font-family: 'flexibleh500_w200';
+  src: url('../font/flexible-h500w200-webfont.woff2') format('woff2'),
+       url('../font/flexible-h500w200-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+.flexibleh600_w200 { 
+  font-family: 'flexibleh600_w200';
+}
+
+
+
+@font-face {
+  font-family: 'flexibleh600_w200';
+  src: url('../font/flexible-h600w200-webfont.woff2') format('woff2'),
+       url('../font/flexible-h600w200-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.flexibleh700_w200 { 
+  font-family: 'flexibleh700_w200';
+}
+
+
+@font-face {
+  font-family: 'flexibleh700_w200';
+  src: url('../font/flexible-h700w200-webfont.woff2') format('woff2'),
+       url('../font/flexible-h700w200-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.flexibleh800_w200 { 
+  font-family: 'flexibleh800_w200';
+}
+
+
+@font-face {
+  font-family: 'flexibleh800_w200';
+  src: url('../font/flexible-h800w200-webfont.woff2') format('woff2'),
+       url('../font/flexible-h800w200-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.flexibleh900_w200 { 
+  font-family: 'flexibleh900_w200';
+}
+
+
+@font-face {
+  font-family: 'flexibleh900_w200';
+  src: url('../font/flexible-h900w200-webfont.woff2') format('woff2'),
+       url('../font/flexible-h900w200-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.flexibleh1000_w200 { 
+  font-family: 'flexibleh1000_w200';
+}
+
+
+@font-face {
+  font-family: 'flexibleh1000_w200';
+  src: url('../font/flexible-h1000w200-webfont.woff2') format('woff2'),
+       url('../font/flexible-h1000w200-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+.golfpunks-g,
+.golfpunks-o,
+.golfpunks-l,
+.golfpunks-f,
+.golfpunks-p,
+.golfpunks-u,
+.golfpunks-n,
+.golfpunks-k,
+.golfpunks-s {
+  letter-spacing: 2px;
+}
+.home-wg {
+  font-family: 'flexibleh1000_w200';
+}
+.home-wo {
+  font-family: 'flexibleh800_w200';
+}
+.home-wl {
+  font-family: 'flexibleh700_w200';
+}
+.logo-text .w1 {
+  font-family: 'flexibleh1000_w200';
+}
+.logo-text .w2, .golfpunks-p {
+  font-family: 'flexibleh800_w200';
+}
+.golfpunks-f, .golfpunks-u {
+  font-family: 'flexibleh700_w200';
+}
+.logo-text .w3, .golfpunks-l, .golfpunks-n {
+  font-family: 'flexibleh600_w200';
+}
+.logo-text .w4, .golfpunks-o, .golfpunks-k {
+  font-family: 'flexibleh400_w200';
+}
+.logo-text .w5, .golfpunks-g, .golfpunks-s {
+  font-family: 'flexibleh200_w200';
+}
+.logo-text .w6 {
+  font-family: 'flexibleh200_w300';
+}
+.logo-text .w7 {
+  font-family: 'flexibleh400_w200';
+}
+.logo-text .w8 {
+  font-family: 'flexibleh600_w200';
+}
+.logo-text .w9 {
+  font-family: 'flexibleh800_w200';
+}
+.logo-text .w10 {
+  font-family: 'flexibleh1000_w200';
+}
+.logo-text .w1 {
+  font-family: 'flexibleh1000_w200';
+}
+.logo-text .w2 {
+  font-family: 'flexibleh600_w200';
+}
+.logo-text .w3 {
+  font-family: 'flexibleh400_w200';
+}
+.logo-text .w4 {
+  font-family: 'flexibleh300_w200';
+}
+.logo-text .w5 {
+  font-family: 'flexibleh200_w200';
+}
+.logo-text .w6 {
+  font-family: 'flexibleh200_w200';
+}
+.logo-text .w7 {
+  font-family: 'flexibleh300_w200';
+}
+.logo-text .w8 {
+  font-family: 'flexibleh400_w200';
+}
+.logo-text .w9 {
+  font-family: 'flexibleh600_w200';
+}
+.logo-text .w10 {
+  font-family: 'flexibleh1000_w200';
+}
+.Flexible {
+  font-family: 'Flexible';
+}
+.Tanker {
+    font-family: 'Tanker';
+}
+.title-img {
+  width: 100%;
+  background-image: url('../assets/images/bg.png');
+  background-size: cover;
+  min-height: 25rem!important;
+}
+.padding-6 {
+  padding: 2rem 0 0rem;
+}
+.padding-15 {
+  padding: 15rem 0;
+}
+.position-relative {
+  position: relative!important;
+}
+.position-absolute {
+  position: absolute!important;
+}
+.t-40 {
+  top: -40px
+}
+.color-green {
+  color: #42a369!important;
+}
+.color-white {
+  color: #fff!important;
+}
+.color-grey {
+  color: #bcbcbf;
+}
+.color-grey-light {
+  color: #eee!important;
+}
+.color-grey-weight {
+  color: #202332!important;
+}
+.bg-grey {
+  background-color: #353845!important;
+}
+.bg-grey-weight {
+  background-color: #202332!important;
+}
+.bg-grey-light {
+  background-color: #eee!important;
+}
+.bg-green {
+  background-color: #42a369!important;
+}
+.bg-white {
+  background-color: #fff!important;
+}
+.release-bg {
+  background-image: url('../assets/images/pic.jpg');
+  background-size: 100% 100%;
+}
+.padding-top-7 {
+  padding-top: 3rem;
+}
+@media (min-width: 1200px) {
+  .container {
+      width: 1200px!important;
+      max-width: 100%;
+  }
+}
+@media (min-width: 992) {
+  .container {
+      width: 992px!important;
+      max-width: 100%;
+  }
+}
+@media (min-width: 768) {
+  .container {
+      width: 768px!important;
+      max-width: 100%;
+  }
+}
+@media (min-width: 576) {
+  .container {
+      width: 576px!important;
+      max-width: 100%;
+  }
+}
+.btn { 
+  padding: .3rem .4rem!important;
+  font-size: 0.8rem!important;
+}
+.dropdown {
+  border-radius: 0.25rem;
+}
+.dropdown .btn-success:focus {
+  box-shadow: none;
+}
+.dropdown:hover .btn-success {
+  background-color: #6cd496!important;
+  border-color: #63d18f!important;
+}
+.dropdown .btn  {
+  padding: 0.28rem 0!important;
+  font-size: 0.8rem!important;
+  background-color: #52cc83!important;
+  border-color: #52cc83!important;
+}
+.dropdown .btn:hover {
+  color: #000;
+  background-color: #6cd496!important;
+  border-color: #63d18f!important;
+}
+.dropdown-toggle::after {
+  display: none!important;
+}
+.dropdown-menu {
+  /* right: -0.5rem!important; */
+  background-color: #52cc83!important;
+  padding: .3rem 0.2rem!important;
+  min-width: 7rem!important;
+}
+.dropdown-menu .dropdown-item {
+  font-size: .6rem!important;
+  font-family: 'roboto'!important;
+  letter-spacing: 0px!important;
+  color: #fff!important;
+  padding: .3rem 0.2rem!important;
+  text-align: center;
+}
+.dropdown-menu .dropdown-item:hover {
+  background-color: #2b832894;
+}
+.dropdown-menu .dropdown-item:first-child,
+.dropdown-menu .dropdown-item:nth-child(2) {
+  border-bottom: 1px solid #fff!important;
+}
+@media screen and (max-width: 1200px){
+  .padding-15 {
+    padding: 10rem 0;
+  }
+}
+@media screen and (max-width: 992px){
+  .padding-15 {
+    padding: 5rem 0;
+  }
+}
+@media screen and (max-width: 576px){
+  .padding-15 {
+    padding: 0rem 0;
+  }
+}
+.switch {
+  font-size: 16px;
+  padding: 12px!important;
+}
+.switch label {
+  margin-bottom: 0;
+}
+.move { 
+  scroll-behavior: smooth;
+}
+.modal-header, .btn-close {
+  display: none;
+}
+.modal-body {
+  padding: 0.2rem!important;
+}
+.modal-dialog {
+  max-width: 500px;
+  margin: 8rem auto!important;
+}
+@media (min-width: 576px){
+  .modal-dialog {
+      max-width: 500px;
+      margin: 8rem auto!important;
+  }
+}

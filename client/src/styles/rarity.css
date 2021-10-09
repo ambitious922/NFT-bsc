@@ -1,0 +1,58 @@
+.tail-top {
+  border-bottom: 4px solid #000;
+}
+.tail-content {
+    border-radius: 1rem;
+}
+.tail-title {
+  font-size: 4rem;
+  font-weight: 500;
+}
+.tail-content {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.tail-squirrels {
+  font-size: 7.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 500;
+  top: 0;
+  z-index: 1;
+}
+.shorties-text {
+  font-size: 3rem;
+  font-weight: 500;
+}
+.trait-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.top-11 {
+  top: 11rem;
+}
+@media screen and (max-width: 576px) {
+  .tail-squirrels {
+    font-size: 5rem;
+    font-weight: 500;
+  }
+  .top-11 {
+    top: 8rem;
+  }
+  .shorties-text {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+}
+.padding-bottom-20 {
+  padding-bottom: 12rem;
+}
+.rarity-summary {
+  font-size: 1rem;
+  line-height: 1.4rem!important;
+  letter-spacing: 2px;
+}
+.rarity-tier {
+  font-size: 1.2rem;
+  line-height: 1.4rem!important;
+}

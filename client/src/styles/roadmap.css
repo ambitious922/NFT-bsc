@@ -1,0 +1,115 @@
+.percent-num {
+    font-size: 1.6rem;
+    border-right: 3px solid #fff;
+    min-width: 3.5rem;
+}
+.percent-text {
+    font-size: 4rem;
+    font-weight: 500;
+}
+.percent-script {
+    font-size: 1rem;
+    line-height: 1.1!important;
+    font-family: "roboto";
+}
+.you-did-it {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.full-percent {
+    font-size: 7.5rem;
+    font-weight: 500;
+    line-height: 7.5rem;
+}
+.translateY1 {
+  transform: translateY(1.6rem)!important;
+}
+.full-percent-text {
+    font-size: 1rem;
+    font-weight: 500;
+    max-width: 30rem;
+    margin: auto;
+}
+.percent-text-color10, .percent-text-color25, .percent-text-color50, .percent-text-color80, .percent-text-color100 {
+    background-image: linear-gradient(0deg,#52cc83,#52cc83 30%,#52cc83 0,#fff 0,#fff);
+    background-color: #fff;
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.percent-text-color25 {
+    background-image: linear-gradient(0deg,#52cc83,#52cc83 37%,#52cc83 0,#fff 0,#fff);
+}
+.percent-text-color50 {
+    background-image: linear-gradient(0deg,#52cc83,#52cc83 47%,#52cc83 0,#fff 0,#fff);
+}
+.percent-text-color80 {
+    background-image: linear-gradient(0deg,#52cc83,#52cc83 64%,#52cc83 0,#fff 0,#fff);
+}
+.percent-text-color100 {
+  background-image: linear-gradient(0deg,#52cc83,#52cc83 100%,#52cc83 0,#fff 0,#fff);
+}
+.curve {
+  top: 270px;
+  left: 50%;
+}
+.first, .second {
+  width: 1px;
+  height: 345px;
+  box-sizing: border-box;
+  transform: translateX(-50%)
+}
+.first {
+  border-left: 1px dashed #ddd;
+}
+.second {
+  border-right: 1px dashed #ddd;
+}
+.left-border {
+  border-left: 1px solid #fff;
+  transform: translateX(-1px);
+}
+.right-border {
+  border-right: 1px solid #fff;
+}
+@media screen and (max-width: 992px){
+  .left-border {
+    border-left: none;
+    transform: translateX(0px);
+  }
+  .right-border {
+    border-right: none;
+  }
+}
+.loadmap-key1 {
+  top: 10%;
+  left: -36px;
+  transform: translateY(-50%);
+  background-color: #ffffff30;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 0 10rem #00000020;
+}
+.loadmap-key2 {
+  top: 14%;
+  right: -36px;
+  transform: translateY(-50%);
+  background-color: #ffffff30;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 0 10rem #eee
+}
+.key {
+  width: 50px;
+}
+.roadmap-description, .roadmap-description p {
+  font-size: 2rem;
+  font-family: 'TANKER';
+  line-height: 1.5!important;
+}
+.roadmap-description p {
+  font-size: 4rem;
+  font-family: 'TANKER';
+  line-height: 1!important
+}
