@@ -33,8 +33,8 @@ function Footer(props) {
         ) }
       </div>
       <div className="d-block text-center pt-3 pb-3">
-        <a className="social-icon px-3" href="https://discord.gg/cUXA3wyRJp" target="_blank"><i className="fab fa-discord"></i></a>
-        <a className="social-icon px-2" href="https://twitter.com/SquirrelsNFT" target="_blank"><i className="fab fa-twitter"></i></a>
+        <a className="social-icon px-3" href="https://discord.gg/" target="_blank"><i className="fab fa-discord"></i></a>
+        <a className="social-icon px-2" href="https://twitter.com/" target="_blank"><i className="fab fa-twitter"></i></a>
         <a className="social-icon px-2" href="https://lootex.io/" target="_blank">
           <svg viewBox="0 0 1052 357" xmlns="http://www.w3.org/2000/svg" fill="#DF0078" class="_2TeTK">
             <g>

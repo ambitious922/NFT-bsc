@@ -48,16 +48,17 @@ export default function WalletConnectModal(props) {
 
         // Create a connector
         const connector = new WalletConnect({
-            bridge: bridgeUrl, // Required
-            qrcodeModal: QRCodeModal
+          bridge: "https://bridge.walletconnect.org", // Required
+          qrcodeModal: QRCodeModal,
         });
-        
         // Check if connection is already established
         if (!connector.connected) {
             // create new session
-            connector.createSession();
+            
+            connector.createSession({chainId: 56});
+            
         }
-
+        
         connector.on("connect", handleQRCode.bind(this, bridgeUrl));
     }, []);
 

@@ -7,7 +7,7 @@ import { UseWalletProvider } from 'use-wallet';
 
 ReactDOM.render(
   <React.StrictMode>
-    <UseWalletProvider>
+    <UseWalletProvider chainId={56}>
       <App />
     </UseWalletProvider>
   </React.StrictMode>,
