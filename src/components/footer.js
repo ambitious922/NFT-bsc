@@ -7,13 +7,6 @@ function Footer(props) {
   const [showWalletStatus, setShowWalletStatus] = useState(false);  
   return (
     <div className="d-block py-5 position-relative">
-      {/* <div className="title-text Tanker mx-auto pb-5">
-        <p className="text-convinced color-green text-center pt-2">RESTORE JUSTICE TO THE SQUIRRELVERSE</p>
-        <h2 className="text-center color-green footer-title">HELP YOUR<br/> SQUIRRELS<br/><span className="color-white">MAKE BAIL!</span></h2>
-      </div>
-      <div className="w-100 py-5 text-center">
-        <img className="w-75 footer-img" src="./assets/images/3.png"/>
-      </div> */}
       <div className="pt-2 pb-3 w-100 text-center">
         { (props.wallet.status == 'connected')||(props.trustConnect == 'connect') ? (
         <div className="d-flex flex-row position-relative justify-content-center">

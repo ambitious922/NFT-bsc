@@ -64,9 +64,6 @@ export default function WalletConnectModal(props) {
 
     return (
         <Modal {...props} show={ props.openModal } onHide={() => props.setOpenModal(!props.openModal)}>
-          {/* <Modal.Header closeButton>
-            <Modal.Title><p className="Tanker wallet-connect-title">WALLET CONNECTION</p></Modal.Title>
-          </Modal.Header> */}
           <Modal.Body className="pt-5">
             <div className="text-center">
               <Button variant="secondary" className="w-75" onClick = {() => props.wallet.connect()&props.setOpenModal(!props.openModal) }>

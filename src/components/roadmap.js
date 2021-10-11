@@ -48,7 +48,6 @@ function Roadmap() {
                 <span className={ (item.percent == '80%') ? 'percent-text-color80' : 'd-none'}>{ item.percent }</span>
                 <span className={ (item.percent == '100%') ? 'percent-text-color100' : 'd-none'}>{ item.percent }</span>
               </p>
-              {/* <p className="percent-text Tanker color-white pl-4">SQUIRRELS RELEASED</p> */}
               <p className="percent-script color-grey pl-2">{ item.text }</p>
             </div>
             <div className={ (item.percent == '10%') ? ((item.id%2 == 1) ? 'position-absolute loadmap-key1 d-none d-lg-block translateY1' : 'translateY1 position-absolute loadmap-key2 d-none d-lg-block') : ((item.id%2 == 1) ? 'position-absolute loadmap-key1 d-none d-lg-block' : 'position-absolute loadmap-key2 d-none d-lg-block') }>
@@ -60,31 +59,6 @@ function Roadmap() {
       ))}
       <div className="color-white roadmap-description text-center"><p className="text-center pb-2"><span className="color-green">GOLFCHICKS</span> will be free<br/> to mint for all <span className="color-green">GOLFPUNKS</span><br/> holders after sell out.</p> 
       Future utility includes breeding for <span className="color-green">CRYPTOKIDS</span></div>
-      {/* <svg viewBox="0 0 160 160">
-        <path d="M200,0 C200,0 100,100 100, 100 200, 300"  stroke="white"  />
-      </svg> */}
-      {/* <div className="d-none d-lg-flex flex-column position-absolute curve">
-        <div className="first position-relative">
-          <div className="position-absolute loadmap-key1">
-            <img className="key" src="./assets/images/logo1.png"/>
-          </div>
-        </div>
-        <div className="second position-relative">
-          <div className="position-absolute loadmap-key2">
-            <img className="key" src="./assets/images/logo1.png"/>
-          </div>
-        </div>
-        <div className="first position-relative">
-          <div className="position-absolute loadmap-key1">
-            <img className="key" src="./assets/images/logo1.png"/>
-          </div>
-        </div>
-        <div className="second position-relative">
-          <div className="position-absolute loadmap-key2">
-            <img className="key" src="./assets/images/logo1.png"/>
-          </div>
-        </div>
-      </div> */}
     </div>
   )
 };
