@@ -21,7 +21,7 @@ module.exports = {
            `https://kovan.infura.io/v3/${INFURA_KEY}`),
       network_id: 42,
       confirmations: 2,
-      timeoutBlocks: 200000,
+      timeoutBlocks: 20000000,
       skipDryRun: true
     }
   },
@@ -31,7 +31,7 @@ module.exports = {
       settings: {
         optimizer: {
           enabled: false,
-          runs: 1500   // Optimize for how many times you intend to run the code
+          runs: 150000   // Optimize for how many times you intend to run the code
         }
       },
     },

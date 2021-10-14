@@ -1,4 +1,5 @@
 import { useLayoutEffect, useEffect, useState, useRef } from 'react';
+import { useDispatch } from 'react-redux';
 import { Container } from 'react-bootstrap';
 import { useWallet } from 'use-wallet';
 import './App.css';
@@ -9,9 +10,16 @@ import Roadmap from './components/roadmap';
 import Benefits from './components/benefits';
 import Footer from './components/footer';
 import Faq from './components/faq';
+import Web3 from 'web3';
+import GolfPunks from './contracts/GolfPunks.json';
+import { prototype } from '@truffle/hdwallet-provider';
+
+import { GOLF_CONTRACT } from './constants/actionTypes';
 
 
 const App = (params) => {
+  const dispatch = useDispatch();
+  const contractAddress = "0xA7683B1d9E0F72876b74A46df2990edcDfB7D508";
   const ref = useRef();
   let [check, setCheck] = useState(true);
   const sticky = useStickyHeader( 100 );
@@ -20,39 +28,37 @@ const App = (params) => {
   const [openModal, setOpenModal] = useState(false);
   const [mintOpenModal, setMintOpenModal] = useState(false);
   const wallet = useWallet();
+  const [tokenNumber, setTokenNumber] = useState(0);
+  // const [ golfPunksContract, setGolfPunksContract] = useState(null);
+  // const [ price, setPrice] = useState(0);
+  // const [ gasAmount, setGasAmount] = useState(0);
   const checkChange = (value) => {
     setCheck(value);
   };
   const [accountAddress, setAccountAddress] = useState('');
   const [trustConnect, setTrustConnect] = useState('');
-
+  const config = { tokenNumber, setTokenNumber, wallet, accountAddress, setAccountAddress, trustConnect, setAccountAddress, mintOpenModal, setMintOpenModal, openModal, setOpenModal };
+  useEffect(() => {
+    loadBlockchainData()
+  }, [])
+  async function loadBlockchainData() {
+    const web3 = new Web3(Web3.givenProvider || "http://localhost:8545")
+    const golfPunksContract = await new web3.eth.Contract(GolfPunks.abi, contractAddress);
+    const golfTokenPrice = await golfPunksContract.methods.NFT_PRICE().call();
+    const price = Number(golfTokenPrice) * tokenNumber;
+    const gasAmount = await golfPunksContract.methods.mintNFT(tokenNumber).estimateGas({from: wallet.account, value: price});
+    dispatch({ type: GOLF_CONTRACT, payload: { golfPunksContract, price, gasAmount }})
+  }
+ 
   return (
     <div>
       <header ref={ref} className={ headerClasses }>
         <Container>
-          <Header 
-          wallet = { wallet }
-          accountAddress = { accountAddress }
-          setAccountAddress = { setAccountAddress }
-          trustConnect = { trustConnect }
-          setTrustConnect = { setTrustConnect }
-          mintOpenModal = { mintOpenModal } 
-          setMintOpenModal = { setMintOpenModal }
-          openModal = { openModal } 
-          setOpenModal = { setOpenModal }/>
+          <Header {...config}/>
         </Container>
       </header>
       <Container className="move">
-        <Home 
-          wallet = { wallet }
-          accountAddress = { accountAddress }
-          setAccountAddress = { setAccountAddress }
-          trustConnect = { trustConnect }
-          setTrustConnect = { setTrustConnect }
-          mintOpenModal = { mintOpenModal } 
-          setMintOpenModal = { setMintOpenModal }
-          openModal = { openModal } 
-          setOpenModal = { setOpenModal }/>
+        <Home {...config}/>
       </Container>
       <div className="grey-bg">
         <Container className="move"><Golfpunks/></Container>
@@ -63,16 +69,7 @@ const App = (params) => {
         <Container className="move"><Roadmap/></Container>
         <Container className="move"><Faq/></Container>
         <Container className="move">
-          <Footer 
-            wallet = { wallet }
-            accountAddress = { accountAddress }
-            setAccountAddress = { setAccountAddress }
-            trustConnect = { trustConnect }
-            setTrustConnect = { setTrustConnect }
-            mintOpenModal = { mintOpenModal } 
-            setMintOpenModal = { setMintOpenModal }
-            openModal = { openModal } 
-            setOpenModal = { setOpenModal }/> 
+          <Footer {...config}/> 
         </Container>
       </div>
 

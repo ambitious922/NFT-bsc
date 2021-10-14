@@ -1,16 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import './index.css';
 import App from './App';
+import { store } from './store';
 import reportWebVitals from './reportWebVitals';
 import { UseWalletProvider } from 'use-wallet';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <UseWalletProvider chainId={56}>
       <App />
     </UseWalletProvider>
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('app')
 );
 

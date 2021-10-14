@@ -5,7 +5,7 @@ import QRCodeModal from "@walletconnect/qrcode-modal";
 import '../../styles/modal.css';
 
 export default function WalletConnectModal(props) {
-
+    const { wallet, accountAddress, setAccountAddress, trustConnect, setTrustConnect, openModal, setOpenModal } = props;
     const handleQRCode = (bridgeUrl, error, payload) => {
 
         if (error) {
@@ -13,8 +13,8 @@ export default function WalletConnectModal(props) {
         }
         console.log('aa', payload)
         console.log('bb', payload.params[0])
-        props.setAccountAddress(payload.params[0].accounts[0]);
-        props.setTrustConnect(payload.event)
+        setAccountAddress(payload.params[0].accounts[0]);
+        setTrustConnect(payload.event)
         // Get provided accounts and chainId
         // const { accounts, chainId } = payload.params[0];
       
@@ -63,12 +63,12 @@ export default function WalletConnectModal(props) {
     }, []);
 
     return (
-        <Modal {...props} show={ props.openModal } onHide={() => props.setOpenModal(!props.openModal)}>
+        <Modal {...props} show={ openModal } onHide={() => setOpenModal(!openModal)}>
           <Modal.Body className="pt-5">
             <div className="text-center">
-              <Button variant="secondary" className="w-75" onClick = {() => props.wallet.connect()&props.setOpenModal(!props.openModal) }>
+              <Button variant="secondary" className="w-75" onClick = {() => wallet.connect()&setOpenModal(!openModal) }>
                 <div className="metamask text-center">
-                  <img className="metamask-img my-2" src="./assets/images/w1.svg"/>
+                  <img className="metamask-img my-2" src="./assets/images/w1.svg" alt="img"/>
                   <p className="metamask-title Tanker p-1">MetaMask</p>
                   <p className="metamask-txt pb-1">Connect to MetaMask Wallet</p>
                 </div>
@@ -79,7 +79,7 @@ export default function WalletConnectModal(props) {
             <div className="text-center">
               <Button variant="secondary" className="w-75" onClick = {onClickWalletConnect}>
                 <div className="walletconnect text-center">
-                  <img className="walletconnect-img my-2" src="./assets/images/w2.svg"/>
+                  <img className="walletconnect-img my-2" src="./assets/images/w2.svg" alt="img"/>
                   <p className="walletconnect-title Tanker p-1">WalletConnect</p>
                   <p className="walletconnect-txt pb-1"> Scan and Connect to Trust Wallet</p>
                 </div>

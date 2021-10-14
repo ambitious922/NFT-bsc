@@ -51,7 +51,7 @@ function Roadmap() {
               <p className="percent-script color-grey pl-2">{ item.text }</p>
             </div>
             <div className={ (item.percent === '10%') ? ((item.id%2 === 1) ? 'position-absolute loadmap-key1 d-none d-lg-block translateY1' : 'translateY1 position-absolute loadmap-key2 d-none d-lg-block') : ((item.id%2 === 1) ? 'position-absolute loadmap-key1 d-none d-lg-block' : 'position-absolute loadmap-key2 d-none d-lg-block') }>
-              <img className="key" src="./assets/images/logo1.png"/>
+              <img className="key" src="./assets/images/logo1.png" alt="img"/>
             </div>
           </div>
         </div>

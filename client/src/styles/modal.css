@@ -11,3 +11,9 @@
 .mint-modal .mint-btn {
     font-size: 1.2rem!important;
 }
+.rs-input-number-btn-group-vertical {
+    display: none;
+}
+.rs-input-group {
+    display: flex;
+}

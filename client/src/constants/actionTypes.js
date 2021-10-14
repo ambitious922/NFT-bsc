@@ -1,0 +1,1 @@
+export const GOLF_CONTRACT = "GOLF_CONTRACT";

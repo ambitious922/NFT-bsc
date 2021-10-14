@@ -4,32 +4,33 @@ import MintModal from './modal/mintModal';
 import '../styles/footer.css';
 
 function Footer(props) {
+  const { tokenNumber, setTokenNumber, wallet, accountAddress,  setAccountAddress, trustConnect, setTrustConnect, mintOpenModal, setMintOpenModal, openModal, setOpenModal} = props;
   const [showWalletStatus, setShowWalletStatus] = useState(false);  
   return (
     <div className="d-block py-5 position-relative">
       <div className="pt-2 pb-3 w-100 text-center">
-        { (props.wallet.status === 'connected')||(props.trustConnect === 'connect') ? (
+        { (wallet.status === 'connected')||(trustConnect === 'connect') ? (
         <div className="d-flex flex-row position-relative justify-content-center">
-          <button className="btn btn-primary mr-1 px-3 my-0 Tanker" onClick={() => props.setMintOpenModal(!props.mintOpenModal)}>MINT NOW</button>
-          <button className="btn mr-lg-0 btn-primary px-2 my-0 Tanker mr-1 mr-lg-0" onClick = {() => setShowWalletStatus(true)}><img className="wallet-lock" src="./assets/images/lock.png"/></button>
+          <button className="btn btn-primary mr-1 px-3 my-0 Tanker" onClick={() => setMintOpenModal(!mintOpenModal)}>MINT NOW</button>
+          <button className="btn mr-lg-0 btn-primary px-2 my-0 Tanker mr-1 mr-lg-0" onClick = {() => setShowWalletStatus(true)}><img className="wallet-lock" src="./assets/images/lock.png" alt="img"/></button>
           {showWalletStatus && <div className="wallet-status-show py-1 px-1">
-            { (props.wallet.status === 'connected') && <><p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)}>{ props.wallet.account.slice(0, 8) }...{ props.wallet.account.slice(34, 42) }</p>
-            <p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)}>{ (props.wallet.balance*10e-19).toFixed(3) }{ props.wallet.chainId === 56 ? 'BNB' : '' }</p>
-            <p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)&props.wallet.reset()}>Logout</p></>}
-            { (props.trustConnect === 'connect') && <><p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)}>{ props.accountAddress.slice(0, 8) }...{ props.accountAddress.slice(34, 42) }</p>
-            <p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)}>{ (props.wallet.balance*10e-19).toFixed(3) }{ props.wallet.chainId === 56 ? 'BNB' : '' }</p>
-            <p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)&props.wallet.reset()}>Logout</p></>}
+            { (wallet.status === 'connected') && <><p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)}>{ wallet.account.slice(0, 8) }...{ wallet.account.slice(34, 42) }</p>
+            <p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)}>{ (wallet.balance*10e-19).toFixed(3) }{ wallet.chainId === 56 ? 'BNB' : '' }</p>
+            <p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)&wallet.reset()}>Logout</p></>}
+            { (trustConnect === 'connect') && <><p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)}>{ accountAddress.slice(0, 8) }...{ accountAddress.slice(34, 42) }</p>
+            <p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)}>{ (wallet.balance*10e-19).toFixed(3) }{ wallet.chainId === 56 ? 'BNB' : '' }</p>
+            <p className="py-1 roboto" onClick={() => setShowWalletStatus(!showWalletStatus)&wallet.reset()}>Logout</p></>}
           </div>}
         </div>
         ) : (
-          <button className="btn mr-2 mr-lg-0 btn-primary my-2 my-sm-0 Tanker" onClick={() => props.setOpenModal(!props.openModal)}><img className="mr-2 wallet-lock" src="./assets/images/lock.png"/>CONNECT WALLET</button>
+          <button className="btn mr-2 mr-lg-0 btn-primary my-2 my-sm-0 Tanker" onClick={() => setOpenModal(!openModal)}><img className="mr-2 wallet-lock" src="./assets/images/lock.png" alt="img"/>CONNECT WALLET</button>
         ) }
       </div>
       <div className="d-block text-center pt-3 pb-3">
-        <a className="social-icon px-3" href="https://discord.gg/" target="_blank"><i className="fab fa-discord"></i></a>
-        <a className="social-icon px-2" href="https://twitter.com/" target="_blank"><i className="fab fa-twitter"></i></a>
-        <a className="social-icon px-2" href="https://lootex.io/" target="_blank">
-          <svg viewBox="0 0 1052 357" xmlns="http://www.w3.org/2000/svg" fill="#DF0078" class="_2TeTK">
+        <a className="social-icon px-3" href="https://discord.gg/" target="_blank" rel="noopener noreferrer"><i className="fab fa-discord"></i></a>
+        <a className="social-icon px-2" href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>
+        <a className="social-icon px-2" href="https://lootex.io/" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 1052 357" xmlns="http://www.w3.org/2000/svg" fill="#DF0078" className="_2TeTK">
             <g>
               <path d="M52.3466 229.107C51.1242 227.885 50.6909 226.08 51.2251 224.436L101.529 69.6033C102.099 67.8486 103.663 
               66.6047 105.501 66.4439L210.124 57.2907C210.67 57.2428 211.089 57.7687 210.919 58.2908L156.394 226.112C156.233 
@@ -67,17 +68,19 @@ function Footer(props) {
         &copy; 2021 <a className="navbar-brand" href="/">cryptogolf.io</a>
       </div>
       <WalletConnectModal 
-        wallet = { props.wallet }
-        accountAddress = { props.accountAddress }
-        setAccountAddress = { props.setAccountAddress } 
-        trustConnect = { props.trustConnect }
-        setTrustConnect = { props.setTrustConnect }
-        openModal = { props.openModal } 
-        setOpenModal = { props.setOpenModal }/>
+        wallet = { wallet }
+        accountAddress = { accountAddress }
+        setAccountAddress = { setAccountAddress }
+        trustConnect = { trustConnect }
+        setTrustConnect = { setTrustConnect }
+        openModal = { openModal } 
+        setOpenModal = { setOpenModal }/>
       <MintModal
-        wallet = { props.wallet }
-        mintOpenModal = { props.mintOpenModal } 
-        setMintOpenModal = { props.setMintOpenModal }/>
+        tokenNumber ={ tokenNumber }
+        setTokenNumber = { setTokenNumber } 
+        wallet = { wallet }
+        mintOpenModal = { mintOpenModal } 
+        setMintOpenModal = { setMintOpenModal }/>
     </div>
 )};
 

@@ -1,29 +1,33 @@
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { Button, Modal } from 'react-bootstrap';
 import { useState } from 'react';
-import { InputNumber } from 'rsuite';
-import GolfPunks from '../../contracts/GolfPunks.json';
-import Web3 from 'web3';
+import { InputNumber, InputGroup } from 'rsuite';
+
+
 import '../../styles/modal.css';
 
-const contractAddress = "0x48Bb3FeF7e8d8d305234e582dC247B34eC03a740";
-const tokenNumber = 5;
-export default function mintModal(props) {
-    window.web3 = new Web3(window.ethereum);
-    var Contract = require('web3-eth-contract');
-    Contract.setProvider(window.ethereum);
-    const golfPunksContract = new Contract(GolfPunks.abi, contractAddress);
+export default function MintModal(props) {
     
+    const golfContractValue = useSelector(state => state.contract)
+    const { wallet, mintOpenModal, setMintOpenModal } = props;
+    const [tokenNumber, setTokenNumber] = useState(props.tokenNumber);
+    
+    const handleMinus = () => {
+        setTokenNumber(tokenNumber - 1);
+    };
+    const handlePlus = () => {
+        setTokenNumber(tokenNumber + 1);
+        console.log(tokenNumber)
+    };
     const mint = async () => {
-
-        const golfCoinPrice = golfPunksContract.methods.NFT_PRICE.call({from: contractAddress});
-        console.log(golfCoinPrice)
-        const price = Number(golfCoinPrice) * tokenNumber;
-
-        const gasAmount = await golfPunksContract.methods.mintNFT(tokenNumber).estimateGas({from: props.wallet.account, value: price});
-        console.log(price, gasAmount)
-        golfPunksContract.methods
+        props.setTokenNumber(tokenNumber)
+        const golfTokenPrice = await golfContractValue.golfPunksContract.methods.NFT_PRICE().call();
+        const price = Number(golfTokenPrice) * tokenNumber;
+        const gasAmount = await golfContractValue.golfPunksContract.methods.mintNFT(tokenNumber).estimateGas({from: wallet.account, value: price});
+        golfContractValue.golfPunksContract.methods
         .mintNFT(tokenNumber)
-        .send({from: props.wallet.account, value: price, gas: String(gasAmount)})
+        .send({from: wallet.account, value: price, gas: String(gasAmount)})
         .on('transactionHash', function(hash){
           console.log("transactionHash", hash)
         })
@@ -34,21 +38,25 @@ export default function mintModal(props) {
           console.log('confirmation', confirmationNumber, "receipt", receipt)
         })
         .on('error', console.error)
-        console.log('dd')
+        setTokenNumber(0);
     }
 
     return (
-        <Modal className="mint-modal" show={ props.mintOpenModal } onHide={() => props.setMintOpenModal(!props.mintOpenModal)}>
+        <Modal className="mint-modal" show={ mintOpenModal } onHide={() => setMintOpenModal(!mintOpenModal)}>
             <Modal.Header className="justify-content-center">
                 <p className="mint-modal-title Tanker color-white">MINT <span className="color-green">GOLFPUNKS</span></p>
             </Modal.Header>
-            <Modal.Body className="pt-5">
-                <InputNumber defaultValue={0} max={10} min={0} />;
+            <Modal.Body className="py-5 mx-auto">
+                <InputGroup>
+                    <Button variant="secondary" onClick={handleMinus}>-</Button>
+                    <InputNumber defaultValue={0} min={0} max={20} value={tokenNumber} onInput={setTokenNumber} />
+                    <Button variant="secondary" onClick={handlePlus}>+</Button>
+                </InputGroup>
             </Modal.Body>
             <Modal.Footer className="justify-content-center">
                 <div className="text-center">
-                    <Button variant="secondary" className="Tanker mint-btn px-3" onClick = {() => mint()&props.setMintOpenModal(!props.mintOpenModal) }>
-                        MINT
+                    <Button variant="secondary" className="Tanker mint-btn px-3" onClick = {() => mint()&setMintOpenModal(!mintOpenModal) }>
+                        MINT NOW
                     </Button>
                 </div> 
             </Modal.Footer>
