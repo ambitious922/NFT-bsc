@@ -1,3 +1,13 @@
 .wallet-connect-title {
     font-size: 1.5rem;
 }
+.mint-modal .mint-modal-title {
+    font-size: 2rem;
+}
+.mint-modal .modal-content {
+    background: #000000;
+    border: 1px solid #fff;
+}
+.mint-modal .mint-btn {
+    font-size: 1.2rem!important;
+}

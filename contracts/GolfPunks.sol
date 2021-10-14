@@ -1,116 +1,120 @@
 // SPDX-License-Identifier: MIT
+
+/****************************************************************
+ ######                                    #    ######  ####### 
+ #     # ######  ####  ###### #    #      # #   #     # #       
+ #     # #      #    # #      ##   #     #   #  #     # #       
+ #     # #####  #      #####  # #  #    #     # ######  #####   
+ #     # #      #  ### #      #  # #    ####### #       #       
+ #     # #      #    # #      #   ##    #     # #       #       
+ ######  ######  ####  ###### #    #    #     # #       ####### 
+*****************************************************************/
+
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
-import "@openzeppelin/contracts/utils/Counters.sol";
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Pausable.sol";
-contract GolfPunks is ERC721Enumerable, Ownable, ERC721Burnable, ERC721Pausable {
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/utils/Strings.sol";
+import "@openzeppelin/contracts/security/Pausable.sol";
+
+contract GolfPunks is ERC721, ERC721Enumerable, Ownable, Pausable {
     using SafeMath for uint256;
-    using Counters for Counters.Counter;
+    using Strings for uint256;
 
-    Counters.Counter private _tokenIdTracker;
+    string  private baseURI;
+    bool    public  isRevealation = true; 
+    
+    uint256 public MAX_NFT_COUNT = 5555;
+    uint256 public NFT_PRICE = 0.07 ether;
+    uint256 public BUY_LIMIT_PER_TX = 10;
 
-    uint256 public constant MAX_ELEMENTS = 8888;
-    uint256 public constant PRICE = 3 * 10**16;
-    uint256 public constant MAX_BY_MINT = 20;
-    uint256 public constant reveal_timestamp = 1627588800; // Thu Jul 29 2021 20:00:00 GMT+0000
-    address public constant creatorAddress = 0x6F84Fa72Ca4554E0eEFcB9032e5A4F1FB41b726C;
-    address public constant devAddress = 0xcBCc84766F2950CF867f42D766c43fB2D2Ba3256;
-    string public baseTokenURI;
+    constructor() ERC721("GolfPunks", "MILF") {}
 
-    event CreatePenguin(uint256 indexed id);
-    constructor(string memory baseURI) ERC721("PudgyPenguins", "PPG") {
-        setBaseURI(baseURI);
-        pause(true);
+    /*
+     * Function to withdraw collected amount during minting
+    */
+    function withdraw(address _to) public onlyOwner {
+        uint balance = address(this).balance;
+        payable(_to).transfer(balance);
     }
 
-    modifier saleIsOpen {
-        require(_totalSupply() <= MAX_ELEMENTS, "Sale end");
-        if (_msgSender() != owner()) {
-            require(!paused(), "Pausable: paused");
-        }
-        _;
-    }
-    function _totalSupply() internal view returns (uint) {
-        return _tokenIdTracker.current();
-    }
-    function totalMint() public view returns (uint256) {
-        return _totalSupply();
-    }
-    function mint(address _to, uint256 _count) public payable saleIsOpen {
-        uint256 total = _totalSupply();
-        require(total + _count <= MAX_ELEMENTS, "Max limit");
-        require(total <= MAX_ELEMENTS, "Sale end");
-        require(_count <= MAX_BY_MINT, "Exceeds number");
-        require(msg.value >= price(_count), "Value below price");
+    /*
+     * Function to mint new NFTs
+     * It is payable. Amount is calculated as per (NFT_PRICE * _numOfTokens)
+    */
+    function mintNFT(uint256 _numOfTokens) public payable whenNotPaused {
+        require(_numOfTokens <= BUY_LIMIT_PER_TX, "Can't mint above limit");
+        require(totalSupply().add(_numOfTokens) <= MAX_NFT_COUNT, "Purchase would exceed max supply of NFTs");
+        require(NFT_PRICE.mul(_numOfTokens) == msg.value, "Ether value sent is not correct");
 
-        for (uint256 i = 0; i < _count; i++) {
-            _mintAnElement(_to);
+        for(uint i=0; i < _numOfTokens; i++) {
+            _safeMint(msg.sender, totalSupply());
         }
     }
-    function _mintAnElement(address _to) private {
-        uint id = _totalSupply();
-        _tokenIdTracker.increment();
-        _safeMint(_to, id);
-        emit CreatePenguin(id);
-    }
-    function price(uint256 _count) public pure returns (uint256) {
-        return PRICE.mul(_count);
-    }
 
-    function _baseURI() internal view virtual override returns (string memory) {
-        return baseTokenURI;
-    }
-
-    function setBaseURI(string memory baseURI) public onlyOwner {
-        baseTokenURI = baseURI;
+    /*
+     * Function to get token URI of given token ID
+     * URI will be blank untill totalSupply reaches MAX_NFT_COUNT
+    */
+    function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {
+        require(isRevealation, "Can't see it");
+        require(_exists(tokenId), "ERC721Metadata: URI query for nonexistent token");
+        require(bytes(baseURI).length > 0, "BaseURI is not correct");
+    
+        return string(abi.encodePacked(baseURI, tokenId.toString()));
     }
 
-    function walletOfOwner(address _owner) external view returns (uint256[] memory) {
-        uint256 tokenCount = balanceOf(_owner);
-
-        uint256[] memory tokensId = new uint256[](tokenCount);
-        for (uint256 i = 0; i < tokenCount; i++) {
-            tokensId[i] = tokenOfOwnerByIndex(_owner, i);
-        }
-
-        return tokensId;
+    /*
+     * Function to set Base URI 
+    */
+    function setURI(string memory _baseURI) external onlyOwner {
+        baseURI = _baseURI;
     }
 
-    function pause(bool val) public onlyOwner {
-        if (val == true) {
-            _pause();
-            return;
-        }
+    /*
+     * Function to pause 
+    */
+    function pause() external onlyOwner {
+        _pause();
+    }
+
+    /*
+     * Function to unpause 
+    */
+    function unpause() external onlyOwner {
         _unpause();
     }
 
-    function withdrawAll() public payable onlyOwner {
-        uint256 balance = address(this).balance;
-        require(balance > 0);
-        _widthdraw(devAddress, balance.mul(35).div(100));
-        _widthdraw(creatorAddress, address(this).balance);
+    /*
+     * Function to get revealation
+    */
+    function revealation() public view returns (bool) {
+        return isRevealation;
     }
 
-    function _widthdraw(address _address, uint256 _amount) private {
-        (bool success, ) = _address.call{value: _amount}("");
-        require(success, "Transfer failed.");
+    /*
+     * Function to active revealation
+    */
+    function activeRevealation() external onlyOwner {
+        isRevealation = true;
     }
 
-    function _beforeTokenTransfer(
-        address from,
-        address to,
-        uint256 tokenId
-    ) internal virtual override(ERC721, ERC721Enumerable, ERC721Pausable) {
+    /*
+     * Function to unactive revealation
+    */
+    function unactiveRevealation() external onlyOwner {
+        isRevealation = false;
+    }
+
+    // Standard functions to be overridden 
+    function _beforeTokenTransfer(address from, address to, uint256 tokenId) internal override(ERC721, 
+    ERC721Enumerable) {
         super._beforeTokenTransfer(from, to, tokenId);
     }
 
-    function supportsInterface(bytes4 interfaceId) public view virtual override(ERC721, ERC721Enumerable) returns (bool) {
+    function supportsInterface(bytes4 interfaceId) public view override(ERC721, ERC721Enumerable) returns (bool) {
         return super.supportsInterface(interfaceId);
     }
-    
 }

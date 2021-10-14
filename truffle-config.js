@@ -12,15 +12,14 @@ module.exports = {
   networks: {
     development: {
       host: "127.0.0.1",
-      port: 8545,
-      network_id: "*"
+      port: 7545,
+      network_id: "5777"
     },
     kovan: {
       // networkCheckTimeout: 10000,
       provider: () => new HDWalletProvider(mnemonic,
            `https://kovan.infura.io/v3/${INFURA_KEY}`),
       network_id: 42,
-      gas: 55000000,
       confirmations: 2,
       timeoutBlocks: 200000,
       skipDryRun: true

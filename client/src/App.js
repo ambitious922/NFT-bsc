@@ -1,14 +1,10 @@
 import { useLayoutEffect, useEffect, useState, useRef } from 'react';
 import { Container } from 'react-bootstrap';
-import { useWallet, UseWalletProvider } from 'use-wallet';
-import Web3 from 'web3';
+import { useWallet } from 'use-wallet';
 import './App.css';
 import Header from './components/header';
 import Home from './components/home';
 import Golfpunks from './components/golfpunks';
-import Release from './components/release';
-import Rarity from './components/rarity';
-import Lineup from './components/lineup';
 import Roadmap from './components/roadmap';
 import Benefits from './components/benefits';
 import Footer from './components/footer';
@@ -22,6 +18,7 @@ const App = (params) => {
   const headerClasses = `header ${(sticky && check) ? 'sticky' : ''}`;
   const { clientHeight } = ref;
   const [openModal, setOpenModal] = useState(false);
+  const [mintOpenModal, setMintOpenModal] = useState(false);
   const wallet = useWallet();
   const checkChange = (value) => {
     setCheck(value);
@@ -39,6 +36,8 @@ const App = (params) => {
           setAccountAddress = { setAccountAddress }
           trustConnect = { trustConnect }
           setTrustConnect = { setTrustConnect }
+          mintOpenModal = { mintOpenModal } 
+          setMintOpenModal = { setMintOpenModal }
           openModal = { openModal } 
           setOpenModal = { setOpenModal }/>
         </Container>
@@ -50,6 +49,8 @@ const App = (params) => {
           setAccountAddress = { setAccountAddress }
           trustConnect = { trustConnect }
           setTrustConnect = { setTrustConnect }
+          mintOpenModal = { mintOpenModal } 
+          setMintOpenModal = { setMintOpenModal }
           openModal = { openModal } 
           setOpenModal = { setOpenModal }/>
       </Container>
@@ -68,21 +69,13 @@ const App = (params) => {
             setAccountAddress = { setAccountAddress }
             trustConnect = { trustConnect }
             setTrustConnect = { setTrustConnect }
+            mintOpenModal = { mintOpenModal } 
+            setMintOpenModal = { setMintOpenModal }
             openModal = { openModal } 
             setOpenModal = { setOpenModal }/> 
         </Container>
       </div>
 
-
-
-      {/* <div className="release-bg">
-        <Container className="move"><Release/></Container>
-      </div>
-      <div className="grey-bg padding-top-7">
-        <Container className="move"><Lineup/></Container>
-        <Container className="move"><Roadmap/></Container>
-        <Container className="move"><Footer openModal = { openModal } setOpenModal = { setOpenModal }/></Container>
-      </div> */}
       <Switch className="switch" onCheck={setCheck} defaultValue={ check }>Toggle Sticky</Switch>
     </div>
   );
