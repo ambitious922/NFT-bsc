@@ -20,6 +20,7 @@ import { GOLF_CONTRACT } from './constants/actionTypes';
 const App = (params) => {
   const dispatch = useDispatch();
   const contractAddress = "0xA7683B1d9E0F72876b74A46df2990edcDfB7D508";
+  // const contractAddress = "0x41D3e8040d558E812F329a8A3B72384516C37516";//eth_mainnet
   const ref = useRef();
   let [check, setCheck] = useState(true);
   const sticky = useStickyHeader( 100 );
@@ -42,12 +43,19 @@ const App = (params) => {
     loadBlockchainData()
   }, [])
   async function loadBlockchainData() {
-    const web3 = new Web3(Web3.givenProvider || "http://localhost:8545")
-    const golfPunksContract = await new web3.eth.Contract(GolfPunks.abi, contractAddress);
-    const golfTokenPrice = await golfPunksContract.methods.NFT_PRICE().call();
-    const price = Number(golfTokenPrice) * tokenNumber;
-    const gasAmount = await golfPunksContract.methods.mintNFT(tokenNumber).estimateGas({from: wallet.account, value: price});
-    dispatch({ type: GOLF_CONTRACT, payload: { golfPunksContract, price, gasAmount }})
+    
+    // // mainnet 
+    const web3 = new Web3('https://bsc-dataseed1.binance.org:443');
+    // // testnet
+    // const web3 = new Web3('https://data-seed-prebsc-1-s1.binance.org:8545');
+    const account = web3.eth.accounts.create();
+    console.log("dsd",account)
+    // const web3 = new Web3(Web3.givenProvider || "http://localhost:8545");
+    // const golfPunksContract = await new web3.eth.Contract(GolfPunks.abi, contractAddress);
+    // const golfTokenPrice = await golfPunksContract.methods.NFT_PRICE().call();
+    // const price = Number(golfTokenPrice) * tokenNumber;
+    // const gasAmount = await golfPunksContract.methods.mintNFT(tokenNumber).estimateGas({from: wallet.account, value: price});
+    // dispatch({ type: GOLF_CONTRACT, payload: { golfPunksContract, price, gasAmount }})
   }
  
   return (

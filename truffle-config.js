@@ -1,3 +1,6 @@
+
+const Web3 = require('web3');
+const web3 = new Web3();
 const path = require("path");
 require('dotenv').config();
 
@@ -18,16 +21,33 @@ module.exports = {
     kovan: {
       // networkCheckTimeout: 10000,
       provider: () => new HDWalletProvider(mnemonic,
-           `https://kovan.infura.io/v3/${INFURA_KEY}`),
+            `https://kovan.infura.io/v3/${INFURA_KEY}`),
       network_id: 42,
       confirmations: 2,
       timeoutBlocks: 20000000,
       skipDryRun: true
-    }
+    },
+    live: {
+      provider: () => new HDWalletProvider(mnemonic, 
+            `https://mainnet.infura.io/v3/${INFURA_KEY}`),
+      network_id: 1,
+      confirmations: 2,
+      timeoutBlocks: 20000000,
+      skipDryRun: true,
+      gasPrice: web3.utils.toWei('10', 'gwei')
+    },
+    bsc: {
+      provider: () => new HDWalletProvider(mnemonic, 'https://bsc-dataseed.binance.org'),
+      network_id: 56,
+    },
+    bsc_testnet: {
+      provider: () => new HDWalletProvider(mnemonic, 'https://data-seed-prebsc-1-s1.binance.org:8545'),
+      network_id: 97,
+    }   
   },
   compilers: {
     solc: {
-      version: "^0.8.0",
+      version: ">=0.4.22 <0.9.0",
       settings: {
         optimizer: {
           enabled: false,
